@@ -16,6 +16,14 @@ Live version of the game avalible on Heroku - <a href="paste deployed link here"
     * [**User Stories**](#user-stories)
         * [**New User Visitor Goals**](#new-user-visitor-goals)
         * [**Returning Visitor Goals**](#returning-visitor-goals)
+* [**Design**](#design)
+* [**Flowchart of game process**](#flowchart-of-game-process)
+* [**Features**](#features)
+* [**Technologies Used**](#technologies-used)
+* [**Testing**](#testing)
+* [**Bugs**](#bugs)
+* [**Deployment**](#deployment)
+* [**Credits**](#credits)
 
 ## **User Experience**
 ### **Target Audience**
@@ -34,3 +42,19 @@ The primary goal of the website is to operate a functional game of battleships c
     1. To complete a game of battleship that they either won or lost to enjoy.
     2. Test there skills in the game of battleship to better understand the game.
     3. Have a enjoyable time against the computer to feel challenge but able to beat the computer.
+
+## Design
+
+## Flowchart of game process
+
+## Features
+
+## Technologies Used
+
+## Testing
+
+## Bugs
+
+## Deployment
+
+## Credits

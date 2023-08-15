@@ -2,7 +2,7 @@
 # 'X' = Battleship hit
 # ' ' = for avalible spaces
 # 'O' = for a missed shot
- 
+
 from random import randint
 
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
@@ -11,8 +11,8 @@ GUESS_BOARD = [[' '] * 8 for x in range(8)]
 letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
 def print_board(board):
-    print('     A B C D E F G H')
-    print('     ---------------')
+    print('  A B C D E F G H')
+    print('  ---------------')
     row_numb = 1
     for row in board:
         print("%d¦%s¦" % (row_numb, "¦".join(row)))
@@ -46,4 +46,24 @@ def count_ships_hit(board):
 
 create_ships(HIDDEN_BOARD)
 turns = 10
-#while turns > 0:
+while turns > 0:
+    print('Welcom to Battleships')
+    print_board(GUESS_BOARD)
+    row, column = get_ship_location()
+    if GUESS_BOARD[row][column] == 'O':
+        print('You have already guessed that location')
+    elif HIDDEN_BOARD[row][column] == 'X':
+        print(' Nice Hit, you have hit a battleship')
+        GUESS_BOARD[row][column] = 'X'
+        turns -= 1
+    else:
+        print('Sorry, You missed a ship')
+        GUESS_BOARD[row][column] = 'O'
+        turns -= 1
+    if count_ships_hit(GUESS_BOARD) == 5:
+        print('Congratulations, You have sunk all of the battleships, Good Job!')
+        break
+    print('You have ' + str(turns) + ' turns remaining')
+    if turns == 0:
+        print('You have ran out of guesses. GAME OVER!')
+        break

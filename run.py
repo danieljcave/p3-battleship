@@ -1,3 +1,8 @@
+#Legend
+# 'X' = Battleship hit
+# ' ' = for avalible spaces
+# 'O' = for a missed shot
+ 
 from random import randint
 
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]

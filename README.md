@@ -56,6 +56,9 @@ The player has 15 guesses to locate the 10 ships that are located at random on t
 The first feature of the battleship program is the Welcome message that displays on the screen when the user first enters the game. The user is first greated with the word, Battleship in the terminal that uses ASCII text to create the word out of keyboard characters. The aim of this is to intrege the user into the game, to not only get them engraged but to make them want to play the game. Rather than just Reading the words Battleship.
 ![Battleship Ascii image](/assets/readme/battleship-ascii.png)
 
+On the welcome message, the user is welcomed to the game and shown the message 'How To Play:', this is a list of instructions on how the game will be played and what information the user will need before hand to play the game. such as the game mechancics, which explain when a uses guesses a spot they will either show a miss 'O' or a hit 'X' and all empty space is for the user to guess. It informes them of the amount of turns they have and if they miss they will lose a turn and if they hit they will not loose and turn. Finally the aim of the game and what happens if they do not win.
+![Image of battleship welcome message](/assets/readme/welcome-message.png)
+
 ## Technologies Used
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
 ## Testing

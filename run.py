@@ -5,6 +5,7 @@
 
 from random import randint
 
+
 # Used for the user input and displaying the board with the correct user
 # input for rows and columns structured in order.
 letters_to_numbers = {
@@ -74,28 +75,32 @@ def count_ships_hit(board):
     return count
 
 
+def print_ascii():
+    print("    ____        __  __  __          __    _")
+    print("   / __ )____ _/ /_/ /_/ /__  _____/ /_  (_)___")
+    print("  / __  / __ `/ __/ __/ / _ \\/ ___/ __ \\/ / __ |")
+    print(" / /_/ / /_/ / /_/ /_/ /  __(__  ) / / / / /_/ /")
+    print("/_____/\\__,_/\\__/\\__/_/\\___/____/_/ /_/_/ .___/")
+    print("                                       /_/")
+
+
 def intro():
     """
     An Introduction to the game of battleship with battleship
     display and game instructions.
     """
+    print_ascii()
     print(
-        """
-    ____        __  __  __          __    _     
-   / __ )____ _/ /_/ /_/ /__  _____/ /_  (_)___ 
-  / __  / __ `/ __/ __/ / _ \/ ___/ __ \/ / __ |
- / /_/ / /_/ / /_/ /_/ /  __(__  ) / / / / /_/ /
-/_____/\__,_/\__/\__/_/\___/____/_/ /_/_/ .___/ 
-                                       /_/
-"""
         "\nWelcome to Battleship\n"
         "Here we will test your strategic skills in a game of battleship.\n"
         "How To Play: "
         "\n- You will have 15 guesses to locate the 10 enemy ships"
         "\n- A miss will show as an O and you will use a turn."
         "\n- A hit will show as an X and a turn will not be taken."
-        "\n- The aim is to locate all ships and destroy them before you run out of turns"
-        "\n- Failure to locate all ships will lose the war... And the game will be over"
+        "\n- The aim is to locate all ships and destroy them before "
+        "you run out of turns"
+        "\n- Failure to locate all ships will lose the war... "
+        "And the game will be over"
         "\nGood luck Commander. Go get em!\n"
     )
 
@@ -146,7 +151,8 @@ def run_game():
             turns -= 1
         if count_ships_hit(GUESS_BOARD) == 10:
             print(
-                "\nCongratulations, You have sunk all of the battleships, Good Job!\n"
+                "\nCongratulations, You have sunk all of the "
+                "battleships, Good Job!\n"
             )
             break
         print("You have " + str(turns) + " turns remaining\n")
@@ -162,7 +168,7 @@ def replay_game():
     """
     while True:
         try:
-            restart_game = input("Are you ready to play again: (Y)es / (N)o?\n").upper()
+            restart_game = input("Ready to play again: (Y)es/(N)o?\n").upper()
         except EOFError:
             print("Invalid Input. Please Try Again\n")
             continue

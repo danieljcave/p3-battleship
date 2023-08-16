@@ -56,13 +56,13 @@ The player has 15 guesses to locate the 10 ships that are located at random on t
 
 ## Features
 ### Welcome Message
-The first feature of the battleship program is the Welcome message that displays on the screen when the user first enters the game. The user is first greated with the word, Battleship in the terminal that uses ASCII text to create the word out of keyboard characters. The aim of this is to intrege the user into the game, to not only get them engraged but to make them want to play the game. Rather than just Reading the words Battleship.
+The first feature of the battleship program is the Welcome message that displays on the screen when the user first enters the game. The user is first greeted with the word, Battleship in the terminal that uses ASCII text to create the word out of keyboard characters. The aim of this is to intrigue the user into the game, to not only get them engaged but to make them want to play the game. Rather than just Reading the words Battleship.
 ![Battleship Ascii image](/assets/readme/battleship-ascii.png)
 
 On the welcome message, the user is welcomed to the game and shown the message 'How To Play:', this is a list of instructions on how the game will be played and what information the user will need beforehand to play the game. such as the game mechanics, which explain when a user guesses a spot they will either show a miss 'O' or a hit 'X' and all empty space is for the user to guess. It informs them of the number of turns they have and if they miss they will lose a turn and if they hit they will not lose and turn. Finally the aim of the game and what happens if they do not win.
 ![Image of battleship welcome message](/assets/readme/welcome-message.png)
 
-The last feature on the welcome screen is asking the user if they are ready to play the game. This I belive is crucial to the user experience, by allowing the user to read through the information and be able to decide when they are ready to play. So as to not be able to see the playing game without the correct instructions or knowledge. This is to not overwhelm the player or allow them to start and just guess what they are doing or waste turns, to give them the best chance of winning and enjoying the time in the game.
+The last feature on the welcome screen is asking the user if they are ready to play the game. This I believe is crucial to the user experience, by allowing the user to read through the information and be able to decide when they are ready to play. So as to not be able to see the playing game without the correct instructions or knowledge. This is to not overwhelm the player or allow them to start and just guess what they are doing or waste turns, to give them the best chance of winning and enjoying the time in the game.
 ![Player ready questions](/assets/readme/are-you-ready.png)
 
 ### Game Board
@@ -70,11 +70,11 @@ The game boards are made up of two boards. The game is a single-player game that
 ![GUESS_BOARD](/assets/readme/battleship-board.png)
 
 **Player Guess Choice**
-The player has the ability to choose how the game events happen. The player can guess any row or column that they would like. The player can make decisions and choices on there own to play there own game of battle ship. They must choose a row between 1-7 and a column between A-F.
+The player has the ability to choose how the game events happen. The player can guess any row or column that they would like. The player can make decisions and choices on their own to play their own game of battleship. They must choose a row between 1-7 and a column between A-F.
 ![player choice on the board](/assets/readme/battleship-board.png)
 
 **Player Miss**
-When the user is playing the game there is either a hit or a miss. If the player unfortunatly misses the battleship, they are prompted with a message to let them know they missed and lose a turn.
+When the user is playing the game there is either a hit or a miss. If the player, unfortunately, misses the battleship, they are prompted with a message to let them know they missed and lose a turn.
 ![player miss](/assets/readme/player-miss.png)
 
 **Player Hit**
@@ -82,23 +82,23 @@ When the user is playing the game there is either a hit or a miss. If the player
 ![player hit](/assets/readme/player-hit.png)
 
 **Player Input & Validation**
-There are different ocastions when the players input is required. The start of the game when they are asked if they are ready to play. Then the most commen is when asked to input which row and which column. To protect the game, the user must input a row and column within the board. The game checks that the user has entered a number in the range of 1-7 and column of A-F. If the user trys to input anything out of the range, the game replies to the user and prompts a message that they are not in the range and reminds them. They are then instructed to input the row or column again.
+There are different options when the player's input is required. At the start of the game when they are asked if they are ready to play. Then the most common is when asked to input which row and which column. To protect the game, the user must input a row and column within the board. The game checks that the user has entered a number in the range of 1-7 and a column of A-F. If the user tries to input anything out of the range, the game replies to the user and prompts a message that they are not in the range and reminds them. They are then instructed to input the row or column again.
 ![Player input value](/assets/readme/incorrect-value.png)
 
 **Multiple Guesses**
-If they player guesses a location that they have already guess. The game will inform them that they have already guessed that location with a prompt. They will not lose a guess and the board will be reshown to allow them to guess again.
+If the player guesses a location that they have already guessed. The game will inform them that they have already guessed that location with a prompt. They will not lose a guess and the board will be reshown to allow them to guess again.
 ![player guesses multiple times](/assets/readme/multiple-guess.png)
 
 **Player Loss**
-If the player is unfortunatly unable to guess all the locations of the battleship the player looses the game. If they player looses the game they will be prompted with a message to inform them of the loss. Following the loss the player will be asked if they would like to restart the game to try again or not.
+If the player is unfortunately unable to guess all the locations of the battleship the player loses the game. If the player loses the game they will be prompted with a message to inform them of the loss. Following the loss the player will be asked if they would like to restart the game to try again or not.
 ![player loss](/assets/readme/player-lose.png)
 
 **Player Win**
-If the player guess the correct location of the battleships and is able to get all 10 ships then the player wins. If that is the case the player will be show and congratulatory message. They will then be asked if they would like to play the game again or would like not to.
+If the player guesses the correct location of the battleships and is able to get all 10 ships then the player wins. If that is the case the player will be shown and congratulatory message. They will then be asked if they would like to play the game again or would like not to.
 ![player win](/assets/readme/player-win.png)
 
 **Replay Game**
-They last feature of the game is the ability to replay the game. Rather than completing the game and having to refresh the page to run the program again. The player is asked at the end of their game if they win or loose. Wheather they would like to play the game again or if they dont.
+The last feature of the game is the ability to replay the game. Rather than completing the game and having to refresh the page to run the program again. The player is asked at the end of their game if they win or lose. Whether they would like to play the game again or if they don't.
 ![replay game](/assets/readme/play-again.png)
 
 

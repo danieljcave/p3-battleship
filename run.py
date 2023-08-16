@@ -24,12 +24,21 @@ letters_to_numbers = {
     'H': 7
     }
 
+print('''\n
+    ____        __  __  __          __    _     
+   / __ )____ _/ /_/ /_/ /__  _____/ /_  (_)___ 
+  / __  / __ `/ __/ __/ / _ \/ ___/ __ \/ / __ |
+ / /_/ / /_/ / /_/ /_/ /  __(__  ) / / / / /_/ /
+/_____/\__,_/\__/\__/_/\___/____/_/ /_/_/ .___/ 
+                                       /_/      
+      \nWelcome to Battleship.\n''')
+
 def print_board(board):
     print('  A B C D E F G H')
-    print('  ---------------')
+    print(' +-+-+-+-+-+-+-+-+')
     row_numb = 1
     for row in board:
-        print("%d¦%s¦" % (row_numb, "¦".join(row)))
+        print("%d|%s|" % (row_numb, "|".join(row)))
         row_numb += 1
 
 def create_ships(board):
@@ -76,7 +85,6 @@ while turns > 0:
     if count_ships_hit(GUESS_BOARD) == 5:
         print('\nCongratulations, You have sunk all of the battleships, Good Job!\n')
         break
-    print(' ')
     print('You have ' + str(turns) + ' turns remaining\n')
     if turns == 0:
         print('You have ran out of guesses. GAME OVER!')

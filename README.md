@@ -7,7 +7,7 @@ Battleships is a fully designed back-end Python based terminal game which has be
 
 The Battleship game follows the standard practice of the user guessing a location of the opponents battleships to sink and win the game. The Python based game is design and used in a terminal location using the rows and colums to guess the oppents battleship locations to then sink and win.
 
-Live version of the game avalible on Heroku - <a href="paste deployed link here">Click Here!</a>
+Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-6afed2473960.herokuapp.com/">Click Here!</a>
 
 ## Table Of Contents
 * [**User Experience**](#user-experience)

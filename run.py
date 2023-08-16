@@ -36,7 +36,7 @@ def create_ships(board):
     Uses randint to randomise the ships location along,
     8 rows and columns
     """
-    for ship in range(5):
+    for ship in range(10):
         ship_row, ship_column = randint(0,7), randint(0,7)
         while board[ship_row][ship_column] == 'X':
             ship_row, ship_column = randint(0,7), randint(0,7)
@@ -87,13 +87,12 @@ def intro():
 '\nWelcome to Battleship\n'
 'Here we will test your strategic skills in a game of battleship.\n'
 'How To Play: '
-'\n- You will have 15 guesses to locate the 5 enemy ships'
+'\n- You will have 15 guesses to locate the 10 enemy ships'
 '\n- A miss will show as an O and you will use a turn.'
 '\n- A hit will show as an X and a turn will not be taken.'
 '\n- The aim is to locate all ships and destroy them before you run out of turns'
 '\n- Failure to locate all ships will lose the war... And the game will be over'
-'\nGood luck Commander. Go get em!'
-          )
+'\nGood luck Commander. Go get em!')
     
 def start_input():
     """
@@ -136,7 +135,7 @@ def run_game():
             print('\nSorry, You missed a ship')
             GUESS_BOARD[row][column] = 'O'
             turns -= 1
-        if count_ships_hit(GUESS_BOARD) == 5:
+        if count_ships_hit(GUESS_BOARD) == 10:
             print('\nCongratulations, You have sunk all of the battleships, Good Job!\n')
             break
         print('You have ' + str(turns) + ' turns remaining\n')

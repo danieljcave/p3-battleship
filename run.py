@@ -47,14 +47,14 @@ def get_ship_location():
     will provide an error and prompt the user to enter the
     parameters.
     """
-    row = input('Please enter a ship row 1-6: ')
+    row = input('Please enter a ship row 1-6: \n')
     while row not in '123456':
-        print('Please enter a valid row between 1-6')
-        row = input('Please enter a ship row 1-6: ')
-    column  = input('Please enter a ship column A-F: ').upper()
+        print('Please enter a valid row between 1-6 \n')
+        row = input('Please enter a ship row 1-6: \n')
+    column  = input('Please enter a ship column A-F: \n').upper()
     while column not in 'ABCDEF':
-        print('Please enter a valid column between letters A-F')
-        column = input('Please enter a ship column A-F: ').upper()
+        print('Please enter a valid column between letters A-F \n')
+        column = input('Please enter a ship column A-F: \n').upper()
     return int(row) - 1, letters_to_numbers[column]
 
 def count_ships_hit(board):
@@ -100,12 +100,12 @@ def start_input():
         try:
             start_game = input('Are you ready to begin? Press Y to begin your battle: \n').upper()
         except EOFError:
-            print("Invalid Input. Please Enter Again")
+            print("Invalid Input. Please Enter Again\n")
             continue
         if start_game == "Y":
             break
         else:
-            print('Invalid Input, Please Enter Again')
+            print('Invalid Input, Please Enter Again\n')
 
 def run_game():
     """
@@ -151,7 +151,7 @@ def replay_game():
         try:
             restart_game = input("Are you ready to play again: (Y)es / (N)o?\n").upper()
         except EOFError:
-            print("Invalid Input. Please Try Again")
+            print("Invalid Input. Please Try Again\n")
             continue
         if restart_game == "N":
             print("Thank you for playing, we hope you had a good time!")

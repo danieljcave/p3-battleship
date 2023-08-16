@@ -142,3 +142,5 @@ The main issue I found was due to the ASCII graphic of a battleship. The issue w
 ## Deployment
 
 ## Credits
+- Code Institute for the deployment terminal
+- Garrett Broughton for Battleship inspiration and guidence<a href="https://github.com/gbrough/battleship/blob/main/single_player.py">Click Here</a>

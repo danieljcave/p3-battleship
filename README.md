@@ -44,7 +44,7 @@ The primary goal of the website is to operate a functional game of battleships c
     3. Have a enjoyable time against the computer to feel challenge but able to beat the computer.
 
 ## Design
-
+- Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
 ## Flowchart of game process
 
 ## Features

@@ -112,9 +112,14 @@ Programming Languages
 - Python
 
 Technologies
-- Visual Studio Code for primary coding - <a href="https://code.visualstudio.com/">VSCode</a>
-- Heroku Cloud Based Platform to host terminal game - <a href="https://www.heroku.com/">Heroku</a>
-- Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
+- <a href="https://code.visualstudio.com/">VSCode</a> 
+    - Visual Studio Code for primary coding
+- <a href="https://www.heroku.com/">Heroku</a>
+    - Heroku Cloud Based Platform to host terminal game
+- <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
+    - Terminal Art Used ASCII
+- <a href="https://codebeautify.org/python-formatter-beautifier">Code Beautify</a> 
+    - Code beautify to beautify the python code for readability
 ## Testing
 
 ## Bugs

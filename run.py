@@ -1,6 +1,6 @@
 # Battleship game keys for hit, miss and available spaces to guess.
 # 'X' = Battleship hit
-# ' ' = for avalible spaces
+# ' ' = for available spaces
 # 'O' = for a missed shot
 
 from random import randint
@@ -32,8 +32,8 @@ def print_board(board):
 
 def create_ships(board):
     """
-    Create a ships location in range of 5 ships total.
-    Uses randint to randomise the ships location along,
+    Create a ship's location in a range of 5 ships total.
+    Uses randint to randomise the ship's location,
     8 rows and columns
     """
     for ship in range(10):
@@ -44,10 +44,10 @@ def create_ships(board):
 
 def get_ship_location():
     """
-    Input information for the user to guess a ships location.
-    If user enters an invalid row number or column letter,
-    will provide with an error and prompt user to enter in the
-    paramaters.
+    Input information for the user to guess a ship's location.
+    If the user enters an invalid row number or column letter,
+    will provide an error and prompt the user to enter the
+    parameters.
     """
     row = input('Please enter a ship row 1-8: ')
     while row not in '12345678':
@@ -62,7 +62,7 @@ def get_ship_location():
 def count_ships_hit(board):
     """
     Function to check the row to see if a ship has been hit.
-    If a ship has been hit mark with a hit "X"
+    If a ship has hit the mark with a hit "X"
     """
     count = 0
     for row in board:
@@ -73,7 +73,7 @@ def count_ships_hit(board):
 
 def intro():
     """
-    An Introduction into the game of battleship with battleship
+    An Introduction to the game of battleship with battleship
     display and game instructions.
     """
     print('''
@@ -96,7 +96,7 @@ def intro():
     
 def start_input():
     """
-    A Input to check if the user is ready to play the game.
+    An Input to check if the user is ready to play the game.
     """
     while True:
         try:
@@ -115,7 +115,7 @@ def run_game():
     Creates the boards containing the guess and computer board,
     the ships and guessing ship locations and turns.
     """
-    # Hidden Board to hold the ships location but not seen by the user.
+    # Hidden Board to hold the ship's location but not seen by the user.
     HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
     # Guess Board that the user will see and use to guess the location of the 
     # battle ships.
@@ -152,7 +152,7 @@ def replay_game():
         try:
             restart_game = input("Are you ready to play again: (Y)es / (N)o?\n").upper()
         except EOFError:
-            print("Invalid Input. PLease Try Again")
+            print("Invalid Input. Please Try Again")
             continue
         if restart_game == "N":
             print("Thank you for playing, we hope you had a good time!")

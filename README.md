@@ -93,6 +93,14 @@ If they player guesses a location that they have already guess. The game will in
 If the player is unfortunatly unable to guess all the locations of the battleship the player looses the game. If they player looses the game they will be prompted with a message to inform them of the loss. Following the loss the player will be asked if they would like to restart the game to try again or not.
 ![player loss](/assets/readme/player-lose.png)
 
+**Player Win**
+If the player guess the correct location of the battleships and is able to get all 10 ships then the player wins. If that is the case the player will be show and congratulatory message. They will then be asked if they would like to play the game again or would like not to.
+![player win](/assets/readme/player-win.png)
+
+**Replay Game**
+They last feature of the game is the ability to replay the game. Rather than completing the game and having to refresh the page to run the program again. The player is asked at the end of their game if they win or loose. Wheather they would like to play the game again or if they dont.
+![replay game](/assets/readme/play-again.png)
+
 
 ## Technologies Used
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>

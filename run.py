@@ -91,7 +91,7 @@ def intro():
 '\n- The aim is to locate all ships and destroy them before you run out of turns'
 '\n- Failure to locate all ships will lose the war... And the game will be over'
 '\nGood luck Commander. Go get em!')
-    
+
 def start_input():
     """
     An Input to check if the user is ready to play the game.
@@ -122,6 +122,7 @@ def run_game():
     #Player has 15 turns to guess all 10 ship locations.
     turns = 15
     while turns > 0:
+        print_board(HIDDEN_BOARD)
         print_board(GUESS_BOARD)
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == 'O':

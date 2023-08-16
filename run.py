@@ -19,6 +19,10 @@ letters_to_numbers = {
     }
    
 def print_board(board):
+    """
+    Creates the battleship board and converts the 
+    letters into numbers and prints on the board
+    """
     print('  A B C D E F G H')
     print(' +-+-+-+-+-+-+-+-+')
     row_numb = 1

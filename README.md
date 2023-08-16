@@ -24,6 +24,7 @@ Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-
     * [**Future Features**](#future-features)
 * [**Technologies Used**](#technologies-used)
 * [**Testing**](#testing)
+    *[**CI Python Linter**](#ci-python-linter)
 * [**Bugs**](#bugs)
 * [**Deployment**](#deployment)
 * [**Credits**](#credits)
@@ -127,7 +128,15 @@ For my data model, I decided on two separate boards one would be used to hold co
 The model follows a data function to display the information needed at specific times. The first is the intro(). This displays the Battleship Art as well as the game information and how to play. Once a player is ready the start_input() is then called to display a ready question for the player to enter and start the game. Once the player has entered the correct value, run_game() displays the board and allows the player to guess. Once a player has completed the game, replay_game() provides the last question if they would like to play again.
 
 ## Testing
+### CI Python Linter
+This was the list of issues shown in the CI Linter.
+![Python first linter test](/assets/readme/python-validator-test.png)
 
+After looking at the errors, most were due to extra whitespace after text, or code lines being too long. To fix the white space I checked the lines listed and remove the extra white space. To fix the issue of too long characters, I moved some lines below to their own line so were still connecting and made sense.
+![Python Test Complete](/assets/readme/python-validator-complete.png)
+
+The main issue I found was due to the ASCII graphic of a battleship. The issue was due to the character sequence with the characters being used. After some research, I found a fix to the code was to enter each row into a print() function. Then with the character sequence, I added either a / or \ to the code to remove the sequence issue. With def print_ascii(), I then added the code to the intro(). This solved all the issues and now the test is clear and has no errors.
+![Python Test Pass](/assets/readme/python-validator-pass.png)
 ## Bugs
 
 ## Deployment

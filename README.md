@@ -44,13 +44,18 @@ The primary goal of the website is to operate a functional game of battleships c
     3. Have a enjoyable time against the computer to feel challenge but able to beat the computer.
 
 ## Design
-- Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
-## Flowchart of game process
+- How to play:
+
+The design of the game is based of the classic game of battleships. The main aim is to guess a location on the oppenents board to try and sink all of there battle ships. The game allows the user to guess and use strategic guessing to locate and destroy all of the oppents ships.
+
+The rules of the game are a simplistic concept. The user has a 6x6 board to guess the location of all of the ships. The user is prompted to pick a row between the values of 1-6. Once the user has inputted their choice, they are then asked to input a colum, ranges from A through to F. That is then entered into the game to determine if the players misses the battleship or hits the battle ship. If the player misses a Circle or O i posted on the players chosen spot and a turn is deducted from there turns. If the player guesses correctly, then the program displays an X on the spot and notifies the player of a hit and no turn is removed.
+
+- ### Flowchart of game process
 
 ## Features
 
 ## Technologies Used
-
+- Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
 ## Testing
 
 ## Bugs

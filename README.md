@@ -140,6 +140,15 @@ The main issue I found was due to the ASCII graphic of a battleship. The issue w
 ## Bugs
 
 ## Deployment
+The game was deployed to Heroku using Code Instutute's mock terminal. In order to deploy, the following steps were taken:
+
+- Create a Heroku account
+- Choose Python as the primary development language
+- Select the 'Create New App' button
+- Create a name for the application
+- Must add the **Python** and **nodejs** buildpacks in the settings menu
+- Link your GitHub repository with Heroku on the deployment tab
+- Final step is to select either automatic deployment or 'Deploy Branch' manually and select which branch to deploy.
 
 ## Credits
 - Code Institute for the deployment terminal

@@ -120,6 +120,12 @@ Technologies
     - Terminal Art Used ASCII
 - <a href="https://codebeautify.org/python-formatter-beautifier">Code Beautify</a> 
     - Code beautify to beautify the python code for readability
+
+## Data Model
+For my data model, I decided on two separate boards one would be used to hold computer information on the location of the battleships. Then another board that would be shown to the user for them to guess the location of the battleships to ultimately try to beat the game and computer.
+
+The model follows a data function to display the information needed at specific times. The first is the intro(). This displays the Battleship Art as well as the game information and how to play. Once a player is ready the start_input() is then called to display a ready question for the player to enter and start the game. Once the player has entered the correct value, run_game() displays the board and allows the player to guess. Once a player has completed the game, replay_game() provides the last question if they would like to play again.
+
 ## Testing
 
 ## Bugs

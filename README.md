@@ -24,7 +24,7 @@ Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-
     * [**Future Features**](#future-features)
 * [**Technologies Used**](#technologies-used)
 * [**Testing**](#testing)
-    *[**CI Python Linter**](#ci-python-linter)
+    * [**CI Python Linter**](#ci-python-linter)
 * [**Bugs**](#bugs)
 * [**Deployment**](#deployment)
 * [**Credits**](#credits)

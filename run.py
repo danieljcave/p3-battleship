@@ -96,6 +96,7 @@ def run_game():
     # battle ships.
     GUESS_BOARD = [[' '] * 8 for x in range(8)]
     create_ships(HIDDEN_BOARD)
+    #Player has 10 turns to guess all 5 ship locations.
     turns = 10
     while turns > 0:
         print_board(GUESS_BOARD)

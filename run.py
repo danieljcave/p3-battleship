@@ -145,5 +145,6 @@ def play_game():
     intro()
     start_input()
     run_game()
+    replay_game()
 
 play_game()

@@ -17,7 +17,7 @@ Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-
         * [**New User Visitor Goals**](#new-user-visitor-goals)
         * [**Returning Visitor Goals**](#returning-visitor-goals)
 * [**Design**](#design)
-* [**Flowchart of game process**](#flowchart-of-game-process)
+    * [**How to play**](#how-to-play)
 * [**Features**](#features)
 * [**Technologies Used**](#technologies-used)
 * [**Testing**](#testing)
@@ -53,6 +53,8 @@ The rules of the game are a simplistic concept. The user has a 6x6 board to gues
 The player has 15 guesses to locate the 10 ships that are located at random on the board. Once the player has used all of their guesses the player is presented with a game-over message and the game ends. If the user successfully guesses all the locations of the battleships they are presented with a congratuarly message informing them they have won and guessed all locations correctly. The user is then prompted if they would like to restart the game or not. If they select Yes, the game will restart allowing them to keep playing. If they select no, then a prompt message appears thanking them for playing.
 
 ## Features
+The first feature of the battleship program is the Welcome message that displays on the screen when the user first enters the game. The user is first greated with the word, Battleship in the terminal that uses ASCII text to create the word out of keyboard characters. The aim of this is to intrege the user into the game, to not only get them engraged but to make them want to play the game. Rather than just Reading the words Battleship.
+![Battleship Ascii image](/assets/readme/battleship-ascii.png)
 
 ## Technologies Used
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>

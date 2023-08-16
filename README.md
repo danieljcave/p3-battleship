@@ -108,6 +108,12 @@ The last feature of the game is the ability to replay the game. Rather than comp
 - Have set-sized battleships rather than randomised locations.
 
 ## Technologies Used
+Programming Languages
+- Python
+
+Technologies
+- Visual Studio Code for primary coding - <a href="https://code.visualstudio.com/">VSCode</a>
+- Heroku Cloud Based Platform to host terminal game - <a href="https://www.heroku.com/">Heroku</a>
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
 ## Testing
 

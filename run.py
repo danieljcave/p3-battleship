@@ -41,7 +41,7 @@ def start_input():
     """
     while True:
         try:
-            start_game = input("Are you ready to begin? Press Y to begin your battle: ").upper()
+            start_game = input("Are you ready to begin? Press Y to begin your battle: \n").upper()
         except EOFError:
             print("Invalid Input. Please Enter Again")
             continue
@@ -118,6 +118,25 @@ def run_game():
         if turns == 0:
             print('You have ran out of guesses. GAME OVER!')
             break
+
+def replay_game():
+    """
+    A Function to check if the player would like to
+    replay the game again.
+    """
+    while True:
+        try:
+            restart_game = input("Are you ready to play again: (Y)es / (N)o?\n").upper()
+        except EOFError:
+            print("Invalid Input. PLease Try Again")
+            continue
+        if restart_game == "N":
+            print("Thank you for playing, we hope you had a good time!")
+            break
+        elif restart_game == "Y":
+            run_game() 
+        else:
+            print("Are you ready to play again: (Y)es / (N)o?\n").upper()
 
 def play_game():
     """

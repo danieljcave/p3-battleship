@@ -24,14 +24,22 @@ letters_to_numbers = {
     'H': 7
     }
 
-print('''\n
+def intro():
+    """
+    An Introduction into the game of battleship with battleship
+    display and game instructions.
+    """
+    print('''
     ____        __  __  __          __    _     
    / __ )____ _/ /_/ /_/ /__  _____/ /_  (_)___ 
   / __  / __ `/ __/ __/ / _ \/ ___/ __ \/ / __ |
  / /_/ / /_/ / /_/ /_/ /  __(__  ) / / / / /_/ /
 /_____/\__,_/\__/\__/_/\___/____/_/ /_/_/ .___/ 
-                                       /_/      
-      \nWelcome to Battleship.\n''')
+                                       /_/
+    \nWelcome to Battleship. Here we will test your strategic 
+    skills in a game of battleship.\n
+    How To Play:
+          ''')
 
 def print_board(board):
     print('  A B C D E F G H')
@@ -67,6 +75,7 @@ def count_ships_hit(board):
                 count += 1
     return count
 
+
 create_ships(HIDDEN_BOARD)
 turns = 10
 while turns > 0:
@@ -89,3 +98,11 @@ while turns > 0:
     if turns == 0:
         print('You have ran out of guesses. GAME OVER!')
         break
+
+def play_game():
+    """
+    Function to run the game after the introduction
+    """
+    intro()
+
+play_game()

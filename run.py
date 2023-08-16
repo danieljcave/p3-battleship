@@ -122,7 +122,6 @@ def run_game():
     #Player has 15 turns to guess all 10 ship locations.
     turns = 15
     while turns > 0:
-        print_board(HIDDEN_BOARD) # shown for testing purposes
         print_board(GUESS_BOARD)
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == 'O':

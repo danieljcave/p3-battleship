@@ -5,7 +5,9 @@
 
 from random import randint
 
+#Hidden Board to hold the ships location but not seen by the user.
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
+#Guess Board that the user will see and use to guess the location of the battle ships.
 GUESS_BOARD = [[' '] * 8 for x in range(8)]
 
 letters_to_numbers = {

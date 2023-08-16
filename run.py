@@ -51,11 +51,11 @@ def create_ships(board):
 def get_ship_location():
     row = input('Please enter a ship row 1-8: ')
     while row not in '12345678':
-        print('Please enter a valid row')
+        print('Please enter a valid row between 1-8')
         row = input('Please enter a ship row 1-8: ')
     column  = input('Please enter a ship column A-H: ').upper()
     while column not in 'ABCDEFGH':
-        print('Please enter a valid column')
+        print('Please enter a valid column between letters A-H')
         column = input('Please enter a ship column A-H: ').upper()
     return int(row) - 1, letters_to_numbers[column]
 

@@ -84,9 +84,15 @@ def intro():
 /_____/\__,_/\__/\__/_/\___/____/_/ /_/_/ .___/ 
                                        /_/
 '''
-'\nWelcome to Battleship. Here we will test your strategic '
-'skills in a game of battleship.\n'
+'\nWelcome to Battleship\n'
+'Here we will test your strategic skills in a game of battleship.\n'
 'How To Play: '
+'\n- You will have 15 guesses to locate the 5 enemy ships'
+'\n- A miss will show as an O and you will use a turn.'
+'\n- A hit will show as an X and a turn will not be taken.'
+'\n- The aim is to locate all ships and destroy them before you run out of turns'
+'\n- Failure to locate all ships will lose the war... And the game will be over'
+'\nGood luck Commander. Go get em!'
           )
     
 def start_input():
@@ -95,7 +101,7 @@ def start_input():
     """
     while True:
         try:
-            start_game = input("Are you ready to begin? Press Y to begin your battle: \n").upper()
+            start_game = input("\nAre you ready to begin? Press Y to begin your battle: \n").upper()
         except EOFError:
             print("Invalid Input. Please Enter Again")
             continue
@@ -116,8 +122,8 @@ def run_game():
     # battle ships.
     GUESS_BOARD = [[' '] * 8 for x in range(8)]
     create_ships(HIDDEN_BOARD)
-    #Player has 12 turns to guess all 5 ship locations.
-    turns = 12
+    #Player has 15 turns to guess all 5 ship locations.
+    turns = 15
     while turns > 0:
         print_board(GUESS_BOARD)
         row, column = get_ship_location()
@@ -155,7 +161,7 @@ def replay_game():
         elif restart_game == "Y":
             run_game() 
         else:
-            print("Are you ready to play again: (Y)es / (N)o?\n").upper()
+            print("\nAre you ready to play again: (Y)es / (N)o?\n").upper()
 
 def play_game():
     """

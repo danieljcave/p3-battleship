@@ -19,6 +19,8 @@ Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-
 * [**Design**](#design)
     * [**How to play**](#how-to-play)
 * [**Features**](#features)
+    * [**Welcome Message**](#welcome-message)
+    * [**Game Board**](#game-board)
 * [**Technologies Used**](#technologies-used)
 * [**Testing**](#testing)
 * [**Bugs**](#bugs)
@@ -53,6 +55,7 @@ The rules of the game are a simplistic concept. The user has a 6x6 board to gues
 The player has 15 guesses to locate the 10 ships that are located at random on the board. Once the player has used all of their guesses the player is presented with a game-over message and the game ends. If the user successfully guesses all the locations of the battleships they are presented with a congratuarly message informing them they have won and guessed all locations correctly. The user is then prompted if they would like to restart the game or not. If they select Yes, the game will restart allowing them to keep playing. If they select no, then a prompt message appears thanking them for playing.
 
 ## Features
+### Welcome Message
 The first feature of the battleship program is the Welcome message that displays on the screen when the user first enters the game. The user is first greated with the word, Battleship in the terminal that uses ASCII text to create the word out of keyboard characters. The aim of this is to intrege the user into the game, to not only get them engraged but to make them want to play the game. Rather than just Reading the words Battleship.
 ![Battleship Ascii image](/assets/readme/battleship-ascii.png)
 
@@ -61,6 +64,8 @@ On the welcome message, the user is welcomed to the game and shown the message '
 
 The last feature on the welcome screen is asking the user if they are ready to play the game. This I belive is crucial to the user experience, by allowing the user to read through the information and be able to decide when they are ready to play. So as to not be able to see the playing game without the correct instructions or knowledge. This is to not overwhelm the player or allow them to start and just guess what they are doing or waste turns, to give them the best chance of winning and enjoying the time in the game.
 ![Player ready questions](/assets/readme/are-you-ready.png)
+
+### Game Board
 
 ## Technologies Used
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>

@@ -21,6 +21,7 @@ Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-
 * [**Features**](#features)
     * [**Welcome Message**](#welcome-message)
     * [**Game Board**](#game-board)
+    * [**Future Features**](#future-features)
 * [**Technologies Used**](#technologies-used)
 * [**Testing**](#testing)
 * [**Bugs**](#bugs)
@@ -101,6 +102,10 @@ If the player guesses the correct location of the battleships and is able to get
 The last feature of the game is the ability to replay the game. Rather than completing the game and having to refresh the page to run the program again. The player is asked at the end of their game if they win or lose. Whether they would like to play the game again or if they don't.
 ![replay game](/assets/readme/play-again.png)
 
+### Future Features
+- Users have the ability to choose difficulty or play on larger game boards with increased battleships.
+- Allow the user to have their own board with the user selecting where to place their battleship and the computer guessing their location.
+- Have set-sized battleships rather than randomised locations.
 
 ## Technologies Used
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>

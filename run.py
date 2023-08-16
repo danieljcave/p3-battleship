@@ -17,39 +17,7 @@ letters_to_numbers = {
     'G': 6,
     'H': 7
     }
-
-def intro():
-    """
-    An Introduction into the game of battleship with battleship
-    display and game instructions.
-    """
-    print('''
-    ____        __  __  __          __    _     
-   / __ )____ _/ /_/ /_/ /__  _____/ /_  (_)___ 
-  / __  / __ `/ __/ __/ / _ \/ ___/ __ \/ / __ |
- / /_/ / /_/ / /_/ /_/ /  __(__  ) / / / / /_/ /
-/_____/\__,_/\__/\__/_/\___/____/_/ /_/_/ .___/ 
-                                       /_/
-\nWelcome to Battleship. Here we will test your strategic 
-skills in a game of battleship.\n
-How To Play:
-          ''')
-
-def start_input():
-    """
-    A Input to check if the user is ready to play the game.
-    """
-    while True:
-        try:
-            start_game = input("Are you ready to begin? Press Y to begin your battle: \n").upper()
-        except EOFError:
-            print("Invalid Input. Please Enter Again")
-            continue
-        if start_game == "Y":
-            break
-        else:
-            print('Invalid Input, Please Enter Again')
-
+   
 def print_board(board):
     print('  A B C D E F G H')
     print(' +-+-+-+-+-+-+-+-+')
@@ -84,6 +52,38 @@ def count_ships_hit(board):
                 count += 1
     return count
 
+def intro():
+    """
+    An Introduction into the game of battleship with battleship
+    display and game instructions.
+    """
+    print('''
+    ____        __  __  __          __    _     
+   / __ )____ _/ /_/ /_/ /__  _____/ /_  (_)___ 
+  / __  / __ `/ __/ __/ / _ \/ ___/ __ \/ / __ |
+ / /_/ / /_/ / /_/ /_/ /  __(__  ) / / / / /_/ /
+/_____/\__,_/\__/\__/_/\___/____/_/ /_/_/ .___/ 
+                                       /_/
+\nWelcome to Battleship. Here we will test your strategic 
+skills in a game of battleship.\n
+How To Play:
+          ''')
+    
+def start_input():
+    """
+    A Input to check if the user is ready to play the game.
+    """
+    while True:
+        try:
+            start_game = input("Are you ready to begin? Press Y to begin your battle: \n").upper()
+        except EOFError:
+            print("Invalid Input. Please Enter Again")
+            continue
+        if start_game == "Y":
+            break
+        else:
+            print('Invalid Input, Please Enter Again')
+
 def run_game():
     """
     Contains all elements of the game,
@@ -116,7 +116,7 @@ def run_game():
             break
         print('You have ' + str(turns) + ' turns remaining\n')
         if turns == 0:
-            print('You have ran out of guesses. GAME OVER!')
+            print('You have ran out of guesses. GAME OVER!\n')
             break
 
 def replay_game():

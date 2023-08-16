@@ -14,8 +14,6 @@ letters_to_numbers = {
     'D': 3,
     'E': 4,
     'F': 5,
-    'G': 6,
-    'H': 7
     }
    
 def print_board(board):
@@ -23,8 +21,8 @@ def print_board(board):
     Creates the battleship board and converts the 
     letters into numbers and prints on the board
     """
-    print('  A B C D E F G H')
-    print(' +-+-+-+-+-+-+-+-+')
+    print('  A B C D E F')
+    print(' +-+-+-+-+-+-+')
     row_numb = 1
     for row in board:
         print("%d|%s|" % (row_numb, "|".join(row)))
@@ -32,14 +30,14 @@ def print_board(board):
 
 def create_ships(board):
     """
-    Create a ship's location in a range of 5 ships total.
+    Create a ship's location in a range of 10 ships total.
     Uses randint to randomise the ship's location,
-    8 rows and columns
+    6 rows and columns
     """
     for ship in range(10):
-        ship_row, ship_column = randint(0,7), randint(0,7)
+        ship_row, ship_column = randint(0,5), randint(0,5)
         while board[ship_row][ship_column] == 'X':
-            ship_row, ship_column = randint(0,7), randint(0,7)
+            ship_row, ship_column = randint(0,5), randint(0,5)
         board[ship_row][ship_column] = 'X'
 
 def get_ship_location():
@@ -49,14 +47,14 @@ def get_ship_location():
     will provide an error and prompt the user to enter the
     parameters.
     """
-    row = input('Please enter a ship row 1-8: ')
-    while row not in '12345678':
-        print('Please enter a valid row between 1-8')
-        row = input('Please enter a ship row 1-8: ')
-    column  = input('Please enter a ship column A-H: ').upper()
-    while column not in 'ABCDEFGH':
-        print('Please enter a valid column between letters A-H')
-        column = input('Please enter a ship column A-H: ').upper()
+    row = input('Please enter a ship row 1-6: ')
+    while row not in '123456':
+        print('Please enter a valid row between 1-6')
+        row = input('Please enter a ship row 1-6: ')
+    column  = input('Please enter a ship column A-F: ').upper()
+    while column not in 'ABCDEF':
+        print('Please enter a valid column between letters A-F')
+        column = input('Please enter a ship column A-F: ').upper()
     return int(row) - 1, letters_to_numbers[column]
 
 def count_ships_hit(board):
@@ -116,12 +114,12 @@ def run_game():
     the ships and guessing ship locations and turns.
     """
     # Hidden Board to hold the ship's location but not seen by the user.
-    HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
+    HIDDEN_BOARD = [[' '] * 6 for x in range(6)]
     # Guess Board that the user will see and use to guess the location of the 
     # battle ships.
-    GUESS_BOARD = [[' '] * 8 for x in range(8)]
+    GUESS_BOARD = [[' '] * 6 for x in range(6)]
     create_ships(HIDDEN_BOARD)
-    #Player has 15 turns to guess all 5 ship locations.
+    #Player has 15 turns to guess all 10 ship locations.
     turns = 15
     while turns > 0:
         print_board(GUESS_BOARD)

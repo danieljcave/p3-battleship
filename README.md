@@ -81,9 +81,18 @@ When the user is playing the game there is either a hit or a miss. If the player
 When the user is playing the game there is either a hit or a miss. If the player scores a hit on the board. they are shown a message to let them know that they have hit a battleship. 
 ![player hit](/assets/readme/player-hit.png)
 
-**Player Input**
+**Player Input & Validation**
 There are different ocastions when the players input is required. The start of the game when they are asked if they are ready to play. Then the most commen is when asked to input which row and which column. To protect the game, the user must input a row and column within the board. The game checks that the user has entered a number in the range of 1-7 and column of A-F. If the user trys to input anything out of the range, the game replies to the user and prompts a message that they are not in the range and reminds them. They are then instructed to input the row or column again.
 ![Player input value](/assets/readme/incorrect-value.png)
+
+**Multiple Guesses**
+If they player guesses a location that they have already guess. The game will inform them that they have already guessed that location with a prompt. They will not lose a guess and the board will be reshown to allow them to guess again.
+![player guesses multiple times](/assets/readme/multiple-guess.png)
+
+**Player Loss**
+If the player is unfortunatly unable to guess all the locations of the battleship the player looses the game. If they player looses the game they will be prompted with a message to inform them of the loss. Following the loss the player will be asked if they would like to restart the game to try again or not.
+![player loss](/assets/readme/player-lose.png)
+
 
 ## Technologies Used
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>

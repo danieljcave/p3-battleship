@@ -34,6 +34,12 @@ def create_ships(board):
         board[ship_row][ship_column] = 'X'
 
 def get_ship_location():
+    """
+    Input information for the user to guess a ships location.
+    If user enters an invalid row number or column letter,
+    will provide with an error and prompt user to enter in the
+    paramaters.
+    """
     row = input('Please enter a ship row 1-8: ')
     while row not in '12345678':
         print('Please enter a valid row between 1-8')

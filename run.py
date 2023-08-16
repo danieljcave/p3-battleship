@@ -1,15 +1,18 @@
-# Battleship game keys for hit, miss and avalible spaces to guess.
+# Battleship game keys for hit, miss and available spaces to guess.
 # 'X' = Battleship hit
 # ' ' = for avalible spaces
 # 'O' = for a missed shot
 
 from random import randint
 
-#Hidden Board to hold the ships location but not seen by the user.
+# Hidden Board to hold the ships location but not seen by the user.
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
-#Guess Board that the user will see and use to guess the location of the battle ships.
+# Guess Board that the user will see and use to guess the location of the 
+# battle ships.
 GUESS_BOARD = [[' '] * 8 for x in range(8)]
 
+# Used for the user input and displaying the board with the correct user 
+# input for rows and columns structured in order.
 letters_to_numbers = {
     'A': 0,
     'B': 1,

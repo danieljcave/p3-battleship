@@ -90,7 +90,7 @@ def intro():
 '\n- A hit will show as an X and a turn will not be taken.'
 '\n- The aim is to locate all ships and destroy them before you run out of turns'
 '\n- Failure to locate all ships will lose the war... And the game will be over'
-'\nGood luck Commander. Go get em!')
+'\nGood luck Commander. Go get em!\n')
 
 def start_input():
     """
@@ -98,7 +98,7 @@ def start_input():
     """
     while True:
         try:
-            start_game = input("Are you ready to begin? Press Y to begin your battle: \n").upper()
+            start_game = input("\nAre you ready to begin? Press Y to begin your battle: \n").upper()
         except EOFError:
             print("Invalid Input. Please Enter Again")
             continue
@@ -122,7 +122,7 @@ def run_game():
     #Player has 15 turns to guess all 10 ship locations.
     turns = 15
     while turns > 0:
-        print_board(HIDDEN_BOARD)
+        print_board(HIDDEN_BOARD) # shown for testing purposes
         print_board(GUESS_BOARD)
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == 'O':

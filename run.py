@@ -45,6 +45,10 @@ def get_ship_location():
     return int(row) - 1, letters_to_numbers[column]
 
 def count_ships_hit(board):
+    """
+    Function to check the row to see if a ship has been hit.
+    If a ship has been hit mark with a hit "X"
+    """
     count = 0
     for row in board:
         for column in row:

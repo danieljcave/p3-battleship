@@ -27,6 +27,11 @@ def print_board(board):
         row_numb += 1
 
 def create_ships(board):
+    """
+    Create a ships location in range of 5 ships total.
+    Uses randint to randomise the ships location along,
+    8 rows and columns
+    """
     for ship in range(5):
         ship_row, ship_column = randint(0,7), randint(0,7)
         while board[ship_row][ship_column] == 'X':

@@ -66,6 +66,8 @@ The last feature on the welcome screen is asking the user if they are ready to p
 ![Player ready questions](/assets/readme/are-you-ready.png)
 
 ### Game Board
+The game boards are made up of two boards. The game is a single-player game that is against a computer. The computer generates 10 random locations across the 6x6 board that the user has to guess. The value of the battleship locations is listed on the 'HIDDEN_BOARD'. This board is not shown to players as it has all the locations of the battleships for the player to guess. The 'GUESS_BOARD' is what the player sees. This is the board that they use to guess the locations of the battleships.
+![GUESS_BOARD](/assets/readme/battleship-board.png)
 
 ## Technologies Used
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>

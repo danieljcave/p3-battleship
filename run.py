@@ -98,7 +98,7 @@ def start_input():
     """
     while True:
         try:
-            start_game = input("\nAre you ready to begin? Press Y to begin your battle: \n").upper()
+            start_game = input('Are you ready to begin? Press Y to begin your battle: \n').upper()
         except EOFError:
             print("Invalid Input. Please Enter Again")
             continue

@@ -69,6 +69,18 @@ The last feature on the welcome screen is asking the user if they are ready to p
 The game boards are made up of two boards. The game is a single-player game that is against a computer. The computer generates 10 random locations across the 6x6 board that the user has to guess. The value of the battleship locations is listed on the 'HIDDEN_BOARD'. This board is not shown to players as it has all the locations of the battleships for the player to guess. The 'GUESS_BOARD' is what the player sees. This is the board that they use to guess the locations of the battleships.
 ![GUESS_BOARD](/assets/readme/battleship-board.png)
 
+**Player Guess Choice**
+The player has the ability to choose how the game events happen. The player can guess any row or column that they would like. The player can make decisions and choices on there own to play there own game of battle ship. They must choose a row between 1-7 and a column between A-F.
+![player choice on the board](/assets/readme/battleship-board.png)
+
+**Player Miss**
+When the user is playing the game there is either a hit or a miss. If the player unfortunatly misses the battleship, they are prompted with a message to let them know they missed and lose a turn.
+![player miss](/assets/readme/player-miss.png)
+
+**Player Hit**
+When the user is playing the game there is either a hit or a miss. If the player scores a hit on the board. they are shown a message to let them know that they have hit a battleship. 
+![player hit](/assets/readme/player-hit.png)
+
 ## Technologies Used
 - Terminal Art Used ASCII - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
 ## Testing

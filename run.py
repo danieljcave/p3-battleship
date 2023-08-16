@@ -83,10 +83,11 @@ def intro():
  / /_/ / /_/ / /_/ /_/ /  __(__  ) / / / / /_/ /
 /_____/\__,_/\__/\__/_/\___/____/_/ /_/_/ .___/ 
                                        /_/
-\nWelcome to Battleship. Here we will test your strategic 
-skills in a game of battleship.\n
-How To Play:
-          ''')
+'''
+'\nWelcome to Battleship. Here we will test your strategic '
+'skills in a game of battleship.\n'
+'How To Play: '
+          )
     
 def start_input():
     """
@@ -125,7 +126,6 @@ def run_game():
         elif HIDDEN_BOARD[row][column] == 'X':
             print('\nNice Shot, you hit a battleship')
             GUESS_BOARD[row][column] = 'X'
-            turns -= 1
         else:
             print('\nSorry, You missed a ship')
             GUESS_BOARD[row][column] = 'O'

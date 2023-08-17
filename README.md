@@ -128,6 +128,16 @@ For my data model, I decided on two separate boards one would be used to hold co
 The model follows a data function to display the information needed at specific times. The first is the intro(). This displays the Battleship Art as well as the game information and how to play. Once a player is ready the start_input() is then called to display a ready question for the player to enter and start the game. Once the player has entered the correct value, run_game() displays the board and allows the player to guess. Once a player has completed the game, replay_game() provides the last question if they would like to play again.
 
 ## Testing
+### Game Testing
+In creating the game, I started off with an 8x8 grid. After testing and all working there were no issues and the game was working as described. The issue came in user testing. It was found that the issue was too large a grid for the user to be able to have a chance at winning the game. The 8x8 grid needed to be reduced. After testing it was found that the ideal game conditions were 15 guesses with 10 ships on a 6x6 grid.
+
+Each input was tested for the correct number and letter for the rows and the columns. Here can see that the game provides the user with an error message that informs them they have not entered a correct value and must enter a value in the range.
+![testing image](/assets/readme/incorrect-value.png)
+
+Each line of the code has been checked and tested throughout the Python Linter test and all have passed. Within the testing phase, all print functions have been tested to make sure the user is displayed with all the correct information. Through the testing using visual studio code, I was able to see any problems within the code and be able to correct them before deploying it to Heroku.
+
+The overall game works as intended and all functions of the game are working correctly. The user is able to start the game, play the game and able to restart the game at their choosing.
+
 ### CI Python Linter
 This was the list of issues shown in the CI Linter.
 ![Python first linter test](/assets/readme/python-validator-test.png)

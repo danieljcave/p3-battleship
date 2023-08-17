@@ -148,6 +148,10 @@ After looking at the errors, most were due to extra whitespace after text, or co
 The main issue I found was due to the ASCII graphic of a battleship. The issue was due to the character sequence with the characters being used. After some research, I found a fix to the code was to enter each row into a print() function. Then with the character sequence, I added either a / or \ to the code to remove the sequence issue. With def print_ascii(), I then added the code to the intro(). This solved all the issues and now the test is clear and has no errors.
 ![Python Test Pass](/assets/readme/python-validator-pass.png)
 ## Bugs
+There is a known bug in the game that I was unable to fix and after a lot of research and trying to input the correct code I was unable to provide a fix. The issue is when the user enters a blank character in the row and column it causes an issue within the game which causes the game to stop.
+![blank characters game](/assets/readme/enter-error.png)
+
+This is due to the int input. I had tried to use a while true statement to only allow the correct characters to be able to be input, this then caused an issue with the input of the game and was unable to solve.
 
 ## Deployment
 The game was deployed to Heroku using Code Instutute's mock terminal. In order to deploy, the following steps were taken:

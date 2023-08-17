@@ -3,9 +3,9 @@
 ## **Milestone Project 3 for Code Institute Full Stack Software Development.**
 ### Author - Daniel Cave
 
-Battleships is a fully designed back-end Python based terminal game which has been created and running on a terminal hosted on Heroku.
+Battleships is a fully designed back-end Python-based terminal game which has been created and running on a terminal hosted on Heroku.
 
-The Battleship game follows the standard practice of the user guessing a location of the opponents battleships to sink and win the game. The Python based game is design and used in a terminal location using the rows and colums to guess the oppents battleship locations to then sink and win.
+The Battleship game follows the standard practice of the user guessing the location of the opponent's battleships to sink and win the game. The Python-based game is designed and used in a terminal location using the rows and columns to guess the opponent's battleship locations to then sink and win.
 
 Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-6afed2473960.herokuapp.com/">Click Here!</a>
 
@@ -31,10 +31,10 @@ Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-
 
 ## **User Experience**
 ### **Target Audience**
-The target audience of the game are fans of the classic game Battleships. The deployed program will allow the user to play the game against a randomised computor output that they are able to play against multiple times.
+The target audience of the game is fans of the classic game Battleships. The deployed program will allow the user to play the game against a randomised computer output that they can play against multiple times.
 
 ### **Website Goals**
-The primary goal of the website is to operate a functional game of battleships created with python and deployed to a working instance of the game. It is designed to allow the user to play a complete game of battle ships against the computor and feel like a classic game of battleship that the user would play in a physical enviroment or on a game provided server or mobile.
+The primary goal of the website is to operate a functional game of battleships created with Python and deployed to a working instance of the game. It is designed to allow the user to play a complete game of battleships against the computer and feel like a classic game of battleships that the user would play in a physical environment or on a game-provided server or mobile.
 
 ## **User Stories**
 - ## New User Visitor Goals
@@ -44,8 +44,8 @@ The primary goal of the website is to operate a functional game of battleships c
 
 - ### Returning Visitor Goals
     1. To complete a game of battleship that they either won or lost to enjoy.
-    2. Test there skills in the game of battleship to better understand the game.
-    3. Have a enjoyable time against the computer to feel challenge but able to beat the computer.
+    2. Test their skills in the game of battleship to better understand the game.
+    3. Have an enjoyable time against the computer to feel challenged but able to beat the computer.
 
 ## Design
 ### How to play:
@@ -64,7 +64,7 @@ The first feature of the battleship program is the Welcome message that displays
 On the welcome message, the user is welcomed to the game and shown the message 'How To Play:', this is a list of instructions on how the game will be played and what information the user will need beforehand to play the game. such as the game mechanics, which explain when a user guesses a spot they will either show a miss 'O' or a hit 'X' and all empty space is for the user to guess. It informs them of the number of turns they have and if they miss they will lose a turn and if they hit they will not lose and turn. Finally the aim of the game and what happens if they do not win.
 ![Image of battleship welcome message](/assets/readme/welcome-message.png)
 
-The last feature on the welcome screen is asking the user if they are ready to play the game. This I believe is crucial to the user experience, by allowing the user to read through the information and be able to decide when they are ready to play. So as to not be able to see the playing game without the correct instructions or knowledge. This is to not overwhelm the player or allow them to start and just guess what they are doing or waste turns, to give them the best chance of winning and enjoying the time in the game.
+The last feature on the welcome screen is asking the user if they are ready to play the game. This I believe is crucial to the user experience, by allowing the user to read through the information and be able to decide when they are ready to play. To not be able to see the playing game without the correct instructions or knowledge. This is to not overwhelm the player or allow them to start and just guess what they are doing or waste turns, to give them the best chance of winning and enjoying the time in the game.
 ![Player ready questions](/assets/readme/are-you-ready.png)
 
 ### Game Board
@@ -72,7 +72,7 @@ The game boards are made up of two boards. The game is a single-player game that
 ![GUESS_BOARD](/assets/readme/battleship-board.png)
 
 **Player Guess Choice**
-The player has the ability to choose how the game events happen. The player can guess any row or column that they would like. The player can make decisions and choices on their own to play their own game of battleship. They must choose a row between 1-7 and a column between A-F.
+The player can choose how the game events happen. The player can guess any row or column that they would like. The player can make decisions and choices on their own to play their own game of battleship. They must choose a row between 1-7 and a column between A-F.
 ![player choice on the board](/assets/readme/battleship-board.png)
 
 **Player Miss**
@@ -96,7 +96,7 @@ If the player is unfortunately unable to guess all the locations of the battlesh
 ![player loss](/assets/readme/player-lose.png)
 
 **Player Win**
-If the player guesses the correct location of the battleships and is able to get all 10 ships then the player wins. If that is the case the player will be shown and congratulatory message. They will then be asked if they would like to play the game again or would like not to.
+If the player guesses the correct location of the battleships and can get all 10 ships then the player wins. If that is the case the player will be shown and congratulatory message. They will then be asked if they would like to play the game again or would like not to.
 ![player win](/assets/readme/player-win.png)
 
 **Replay Game**
@@ -104,8 +104,8 @@ The last feature of the game is the ability to replay the game. Rather than comp
 ![replay game](/assets/readme/play-again.png)
 
 ### Future Features
-- Users have the ability to choose difficulty or play on larger game boards with increased battleships.
-- Allow the user to have their own board with the user selecting where to place their battleship and the computer guessing their location.
+- Users can choose difficulty or play on larger game boards with increased battleships.
+- Allow the user to have their board with the user selecting where to place their battleship and the computer guessing their location.
 - Have set-sized battleships rather than randomised locations.
 
 ## Technologies Used
@@ -116,33 +116,33 @@ Technologies
 - <a href="https://code.visualstudio.com/">VSCode</a> 
     - Visual Studio Code for primary coding
 - <a href="https://www.heroku.com/">Heroku</a>
-    - Heroku Cloud Based Platform to host terminal game
+    - Heroku Cloud-Based Platform to host terminal game
 - <a href="https://patorjk.com/software/taag/#p=display&f=Slant&t=Battleship">Patorjk ASCII Generator</a>
     - Terminal Art Used ASCII
 - <a href="https://codebeautify.org/python-formatter-beautifier">Code Beautify</a> 
-    - Code beautify to beautify the python code for readability
+    - Code beautify to beautify the Python code for readability
 
 ## Data Model
-For my data model, I decided on two separate boards one would be used to hold computer information on the location of the battleships. Then another board that would be shown to the user for them to guess the location of the battleships to ultimately try to beat the game and computer.
+For my data model, I decided on two separate boards one would be used to hold computer information on the location of the battleships. Then another board would be shown to the user for them to guess the location of the battleships to ultimately try to beat the game and computer.
 
 The model follows a data function to display the information needed at specific times. The first is the intro(). This displays the Battleship Art as well as the game information and how to play. Once a player is ready the start_input() is then called to display a ready question for the player to enter and start the game. Once the player has entered the correct value, run_game() displays the board and allows the player to guess. Once a player has completed the game, replay_game() provides the last question if they would like to play again.
 
 ## Testing
 ### Game Testing
-In creating the game, I started off with an 8x8 grid. After testing and all working there were no issues and the game was working as described. The issue came in user testing. It was found that the issue was too large a grid for the user to be able to have a chance at winning the game. The 8x8 grid needed to be reduced. After testing it was found that the ideal game conditions were 15 guesses with 10 ships on a 6x6 grid.
+In creating the game, I started with an 8x8 grid. After testing and all working there were no issues and the game was working as described. The issue came in user testing. It was found that the issue was too large a grid for the user to be able to have a chance at winning the game. The 8x8 grid needed to be reduced. After testing it was found that the ideal game conditions were 15 guesses with 10 ships on a 6x6 grid.
 
 Each input was tested for the correct number and letter for the rows and the columns. Here can see that the game provides the user with an error message that informs them they have not entered a correct value and must enter a value in the range.
 ![testing image](/assets/readme/incorrect-value.png)
 
 Each line of the code has been checked and tested throughout the Python Linter test and all have passed. Within the testing phase, all print functions have been tested to make sure the user is displayed with all the correct information. Through the testing using visual studio code, I was able to see any problems within the code and be able to correct them before deploying it to Heroku.
 
-The overall game works as intended and all functions of the game are working correctly. The user is able to start the game, play the game and able to restart the game at their choosing.
+The overall game works as intended and all functions of the game are working correctly. The user can start the game, play the game and able to restart the game at their choosing.
 
 ### CI Python Linter
 This was the list of issues shown in the CI Linter.
 ![Python first linter test](/assets/readme/python-validator-test.png)
 
-After looking at the errors, most were due to extra whitespace after text, or code lines being too long. To fix the white space I checked the lines listed and remove the extra white space. To fix the issue of too long characters, I moved some lines below to their own line so were still connecting and made sense.
+After looking at the errors, most were due to extra whitespace after text, or code lines being too long. To fix the white space I checked the lines listed and remove the extra white space. To fix the issue of too long characters, I moved some lines below to their line so were still connecting and made sense.
 ![Python Test Complete](/assets/readme/python-validator-complete.png)
 
 The main issue I found was due to the ASCII graphic of a battleship. The issue was due to the character sequence with the characters being used. After some research, I found a fix to the code was to enter each row into a print() function. Then with the character sequence, I added either a / or \ to the code to remove the sequence issue. With def print_ascii(), I then added the code to the intro(). This solved all the issues and now the test is clear and has no errors.
@@ -154,7 +154,7 @@ There is a known bug in the game that I was unable to fix and after a lot of res
 This is due to the int input. I had tried to use a while true statement to only allow the correct characters to be able to be input, this then caused an issue with the input of the game and was unable to solve.
 
 ## Deployment
-The game was deployed to Heroku using Code Instutute's mock terminal. In order to deploy, the following steps were taken:
+The game was deployed to Heroku using Code Instutute's mock terminal. To deploy, the following steps were taken:
 
 - Create a Heroku account
 - Choose Python as the primary development language

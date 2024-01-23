@@ -3,6 +3,8 @@
 # ' ' = for available spaces
 # 'O' = for a missed shot
 
+import os
+import time
 from random import randint, choice
 
 
@@ -34,6 +36,12 @@ def intro():
         "And the game will be over"
         "\nGood luck Commander. Go get em!\n"
     )
+
+def clear_screen():
+    """
+    Clears the console screen.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def start_input():
@@ -118,11 +126,13 @@ def create_ships(board):
                 break
 
 
-def print_board(board):
+def print_board(board, turns_remaining):
     """
     Creates the battleship board and converts the
     letters into numbers and prints on the board
     """
+    clear_screen() # Clear the console screen
+    print(f"\nYou have {turns_remaining} turns remaining\n")
     print("  A B C D E F")
     print(" +-+-+-+-+-+-+")
     row_numb = 1
@@ -185,18 +195,19 @@ def run_game():
     the ships and guessing ship locations and turns.
     """
     # Hidden Board to hold the ship's location but not seen by the user.
-    HIDDEN_BOARD = [[" "] * 6 for x in range(6)]
+    HIDDEN_BOARD = [[" "] * 6 for _ in range(6)]
     # Guess Board that the user will see and use to guess the location of the
     # battle ships.
-    GUESS_BOARD = [[" "] * 6 for x in range(6)]
+    GUESS_BOARD = [[" "] * 6 for _ in range(6)]
     create_ships(HIDDEN_BOARD)
     # Player has 15 turns to guess all 10 ship locations.
     turns = 15
     while turns > 0:
-        print_board(GUESS_BOARD)
+        print_board(GUESS_BOARD, turns)
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == "O":
-            print("\nYou have already guessed that location, try guess again.")
+            print("\nYou have already guessed that location, "
+                  "try guess again.")
         elif HIDDEN_BOARD[row][column] == "X":
             print("\nNice Shot, you hit a battleship")
             GUESS_BOARD[row][column] = "X"
@@ -204,15 +215,13 @@ def run_game():
             print("\nSorry, You missed a ship")
             GUESS_BOARD[row][column] = "O"
             turns -= 1
+        time.sleep(2)  # Add a short delay after hit/miss message
         if count_ships_hit(GUESS_BOARD) == 10:
-            print(
-                "\nCongratulations, You have sunk all of the "
-                "battleships, Good Job!\n"
-            )
+            print("\nCongratulations, You have sunk all of "
+                  "the battleships, Good Job!\n")
             break
-        print("You have " + str(turns) + " turns remaining\n")
         if turns == 0:
-            print("You have ran out of guesses. GAME OVER!\n")
+            print("You have run out of guesses. GAME OVER!\n")
             break
 
 

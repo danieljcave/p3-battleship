@@ -99,7 +99,8 @@ def get_ship_location():
     will provide an error and prompt the user to enter the
     parameters.
     """
-    valid_row = None  # Assign valid_row value of None for while loop to await valid input from users
+    valid_row = None  # Assign valid_row value of None for while loop to await
+    # valid input from users
 
     while valid_row is None:
         row = input("Please enter a ship row 1-6: \n")
@@ -116,13 +117,13 @@ def get_ship_location():
     while True:
         column = input("Please enter a ship column A-F: \n")
         if not column:
-            print("Invalid Input: Please enter a valid column between letters A-F \n")
+            print("Invalid Input: Please enter a valid column between letters A-F \n")  # noqa
             continue
 
         column = column.upper()
 
         if column not in "ABCDEF":
-            print("Invalid Input: Please enter a valid column between letters A-F \n")
+            print("Invalid Input: Please enter a valid column between letters A-F \n")  # noqa
             continue
 
         return valid_row, letters_to_numbers[column]
@@ -196,7 +197,7 @@ def replay_game():
         elif restart_game == "Y":
             run_game()
         else:
-            print("\nAre you ready to play again: (Y)es / (N)o?\n").upper()
+            print("Invalid Input. Please Try Again\n")
 
 
 def play_game():
@@ -207,5 +208,6 @@ def play_game():
     start_input()
     run_game()
     replay_game()
+
 
 play_game()

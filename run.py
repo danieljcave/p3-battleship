@@ -7,6 +7,16 @@ import os
 import time
 from random import randint, choice
 
+# Used for the user input and displaying the board with the correct user
+# input for rows and columns structured in order.
+letters_to_numbers = {
+    "A": 0,
+    "B": 1,
+    "C": 2,
+    "D": 3,
+    "E": 4,
+    "F": 5,
+}
 
 def print_ascii():
     print("    ____        __  __  __          __    _")
@@ -62,17 +72,6 @@ def start_input():
         else:
             print("Invalid Input, Please Enter Again\n")
 
-
-# Used for the user input and displaying the board with the correct user
-# input for rows and columns structured in order.
-letters_to_numbers = {
-    "A": 0,
-    "B": 1,
-    "C": 2,
-    "D": 3,
-    "E": 4,
-    "F": 5,
-}
 
 def can_place_ship(board, ship_row, ship_column, ship_size, orientation):
     """

@@ -3,7 +3,7 @@
 # ' ' = for available spaces
 # 'O' = for a missed shot
 
-from random import randint
+from random import randint, choice
 
 
 def print_ascii():
@@ -65,18 +65,57 @@ letters_to_numbers = {
     "F": 5,
 }
 
+def can_place_ship(board, ship_row, ship_column, ship_size, orientation):
+    """
+    Checks if a ship of the given size can be placed at the specified location
+    without overlapping with existing ships and fits within the board boundaries.
+    """
+    if orientation == "horizontal":
+        if ship_column + ship_size > len(board[0]):
+            return False  # If ship extends beyonds right edge of the board
+
+        for i in range(ship_size):
+            if board[ship_row][ship_column + i] == "X":
+                return False
+    elif orientation == "vertical":
+        if ship_row + ship_size > len(board):
+            return False  # If ship extends beyonds bottom edge of the board
+
+        for i in range(ship_size):
+            if board[ship_row + i][ship_column] == "X":
+                return False
+    return True
+
+
+
+def place_ship(board, ship_row, ship_column, ship_size, orientation):
+    """
+    Place a ship of the given size at the specified location on the board.
+    """
+    if orientation == "horizontal":
+        for i in range(ship_size):
+            board[ship_row][ship_column + i] = "X"
+    elif orientation == "vertical":
+        for i in range(ship_size):
+            board[ship_row + i][ship_column] = "X"
+
 
 def create_ships(board):
     """
-    Create a ship's location in a range of 10 ships total.
-    Uses randint to randomise the ship's location,
-    6 rows and columns
+    Create ships of different sizes on the board.
     """
-    for ship in range(10):
-        ship_row, ship_column = randint(0, 5), randint(0, 5)
-        while board[ship_row][ship_column] == "X":
-            ship_row, ship_column = randint(0, 5), randint(0, 5)
-        board[ship_row][ship_column] = "X"
+    ship_sizes = [4, 3, 3, 2, 1]  # Ship sizes for 5 ships
+    orientations = ["horizontal", "vertical"]
+
+    for ship_size in ship_sizes:
+        while True:
+            ship_row = randint(0, len(board) - 1)
+            ship_column = randint(0, len(board[0]) - 1)
+            orientation = choice(orientations)
+
+            if can_place_ship(board, ship_row, ship_column, ship_size, orientation):
+                place_ship(board, ship_row, ship_column, ship_size, orientation)
+                break
 
 
 def print_board(board):

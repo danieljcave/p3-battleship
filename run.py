@@ -51,26 +51,34 @@ def get_ship_location():
     will provide an error and prompt the user to enter the
     parameters.
     """
-    while True:
+    valid_row = None
+
+    while valid_row is None:
         row = input("Please enter a ship row 1-6: \n")
         if row == "":
             print("Invalid Input: Please enter a valid row between 1-6 \n")
             continue
 
-        while row not in "123456":
+        if row not in "123456":
             print("Invalid Input: Please enter a valid row between 1-6 \n")
-            row = input("Please enter a ship row 1-6: \n")
+            continue
 
-        column = input("Please enter a ship column A-F: \n").upper()
-        if column == "":
+        valid_row = int(row) - 1  # Convert to int once a valid row is obtained
+
+    while True:
+        column = input("Please enter a ship column A-F: \n")
+        if not column:
             print("Invalid Input: Please enter a valid column between letters A-F \n")
             continue
 
-        while column not in "ABCDEF":
-            print("Invalid Input: Please enter a valid column between letters A-F \n")
-            column = input("Please enter a ship column A-F: \n").upper()
+        column = column.upper()
 
-        return int(row) - 1, letters_to_numbers[column]
+        if column not in "ABCDEF":
+            print("Invalid Input: Please enter a valid column between letters A-F \n")
+            continue
+
+        return valid_row, letters_to_numbers[column]
+
 
 def count_ships_hit(board):
     """

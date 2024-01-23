@@ -37,6 +37,7 @@ def intro():
         "\nGood luck Commander. Go get em!\n"
     )
 
+
 def clear_screen():
     """
     Clears the console screen.
@@ -95,7 +96,6 @@ def can_place_ship(board, ship_row, ship_column, ship_size, orientation):
     return True
 
 
-
 def place_ship(board, ship_row, ship_column, ship_size, orientation):
     """
     Place a ship of the given size at the specified location on the board.
@@ -141,38 +141,38 @@ def print_board(board, turns_remaining):
         row_numb += 1
 
 
-def get_ship_location():
+def get_ship_location(previous_guesses):
     """
     Input information for the user to guess a ship's location.
     If the user enters an invalid row number or column letter,
-    will provide an error and prompt the user to enter the
-    parameters.
+    will provide an error and prompt the user to enter correct 
+    value within the parameters.
     """
-    valid_row = None  # Assign valid_row value of None for while loop to await
-    # valid input from users
-
-    while valid_row is None:
+    while True:
         try:
             row = input("Please enter a ship row 1-6: \n")
             if not row.isdigit() or not (1 <= int(row) <= 6):
                 raise ValueError("Invalid Input")
-            valid_row = int(row) - 1
+            row = int(row) - 1
+
+            while True:
+                column = input("Please enter a ship column A-F: \n").upper()
+                if not column or column not in "ABCDEF":
+                    print("Invalid Input. Please enter a valid column.")
+                else:
+                    break
+
+            location = (row, letters_to_numbers[column])
+
+            if location not in previous_guesses:
+                previous_guesses.add(location)
+                break
+            else:
+                print("You have already guessed that location, try guessing another location.")
         except ValueError:
-            print("Invalid Input: Please enter a single digit row between 1-6 \n")
+            print("Invalid Input. Please enter a valid row and column.\n")
 
-    while True:
-        column = input("Please enter a ship column A-F: \n")
-        if not column:
-            print("Invalid Input: Please enter a valid column between letters A-F \n")  # noqa
-            continue
-
-        column = column.upper()
-
-        if column not in "ABCDEF":
-            print("Invalid Input: Please enter a valid column between letters A-F \n")  # noqa
-            continue
-
-        return valid_row, letters_to_numbers[column]
+    return location
 
 
 def count_ships_hit(board):
@@ -202,12 +202,13 @@ def run_game():
     create_ships(HIDDEN_BOARD)
     # Player has 15 turns to guess all 10 ship locations.
     turns = 15
+    previous_guesses = set()
     while turns > 0:
-        print_board(GUESS_BOARD, turns)
-        row, column = get_ship_location()
+        print_board(GUESS_BOARD, turns)  # Pass 'turns' as the second argument
+        row, column = get_ship_location(previous_guesses)
         if GUESS_BOARD[row][column] == "O":
             print("\nYou have already guessed that location, "
-                  "try guess again.")
+                  "try guessing another location.")
         elif HIDDEN_BOARD[row][column] == "X":
             print("\nNice Shot, you hit a battleship")
             GUESS_BOARD[row][column] = "X"
@@ -216,7 +217,7 @@ def run_game():
             GUESS_BOARD[row][column] = "O"
             turns -= 1
         time.sleep(2)  # Add a short delay after hit/miss message
-        if count_ships_hit(GUESS_BOARD) == 10:
+        if count_ships_hit(GUESS_BOARD) == 13:
             print("\nCongratulations, You have sunk all of "
                   "the battleships, Good Job!\n")
             break

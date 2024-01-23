@@ -103,12 +103,13 @@ def get_ship_location():
     # valid input from users
 
     while valid_row is None:
-        row = input("Please enter a ship row 1-6: \n")
-        if not row.isdigit() or not (1 <= int(row) <= 6):
+        try:
+            row = input("Please enter a ship row 1-6: \n")
+            if not row.isdigit() or not (1 <= int(row) <= 6):
+                raise ValueError("Invalid Input")
+            valid_row = int(row) - 1
+        except ValueError:
             print("Invalid Input: Please enter a single digit row between 1-6 \n")
-            continue
-
-        valid_row = int(row) - 1  # Convert to int once a valid row is obtained
 
     while True:
         column = input("Please enter a ship column A-F: \n")

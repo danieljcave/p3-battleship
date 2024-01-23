@@ -6,93 +6,6 @@
 from random import randint
 
 
-# Used for the user input and displaying the board with the correct user
-# input for rows and columns structured in order.
-letters_to_numbers = {
-    "A": 0,
-    "B": 1,
-    "C": 2,
-    "D": 3,
-    "E": 4,
-    "F": 5,
-}
-
-
-def print_board(board):
-    """
-    Creates the battleship board and converts the
-    letters into numbers and prints on the board
-    """
-    print("  A B C D E F")
-    print(" +-+-+-+-+-+-+")
-    row_numb = 1
-    for row in board:
-        print("%d|%s|" % (row_numb, "|".join(row)))
-        row_numb += 1
-
-
-def create_ships(board):
-    """
-    Create a ship's location in a range of 10 ships total.
-    Uses randint to randomise the ship's location,
-    6 rows and columns
-    """
-    for ship in range(10):
-        ship_row, ship_column = randint(0, 5), randint(0, 5)
-        while board[ship_row][ship_column] == "X":
-            ship_row, ship_column = randint(0, 5), randint(0, 5)
-        board[ship_row][ship_column] = "X"
-
-
-def get_ship_location():
-    """
-    Input information for the user to guess a ship's location.
-    If the user enters an invalid row number or column letter,
-    will provide an error and prompt the user to enter the
-    parameters.
-    """
-    valid_row = None
-
-    while valid_row is None:
-        row = input("Please enter a ship row 1-6: \n")
-        if row == "":
-            print("Invalid Input: Please enter a valid row between 1-6 \n")
-            continue
-
-        if row not in "123456":
-            print("Invalid Input: Please enter a valid row between 1-6 \n")
-            continue
-
-        valid_row = int(row) - 1  # Convert to int once a valid row is obtained
-
-    while True:
-        column = input("Please enter a ship column A-F: \n")
-        if not column:
-            print("Invalid Input: Please enter a valid column between letters A-F \n")
-            continue
-
-        column = column.upper()
-
-        if column not in "ABCDEF":
-            print("Invalid Input: Please enter a valid column between letters A-F \n")
-            continue
-
-        return valid_row, letters_to_numbers[column]
-
-
-def count_ships_hit(board):
-    """
-    Function to check the row to see if a ship has been hit.
-    If a ship has hit the mark with a hit "X"
-    """
-    count = 0
-    for row in board:
-        for column in row:
-            if column == "X":
-                count += 1
-    return count
-
-
 def print_ascii():
     print("    ____        __  __  __          __    _")
     print("   / __ )____ _/ /_/ /_/ /__  _____/ /_  (_)___")
@@ -139,6 +52,93 @@ def start_input():
             break
         else:
             print("Invalid Input, Please Enter Again\n")
+
+
+# Used for the user input and displaying the board with the correct user
+# input for rows and columns structured in order.
+letters_to_numbers = {
+    "A": 0,
+    "B": 1,
+    "C": 2,
+    "D": 3,
+    "E": 4,
+    "F": 5,
+}
+
+
+def create_ships(board):
+    """
+    Create a ship's location in a range of 10 ships total.
+    Uses randint to randomise the ship's location,
+    6 rows and columns
+    """
+    for ship in range(10):
+        ship_row, ship_column = randint(0, 5), randint(0, 5)
+        while board[ship_row][ship_column] == "X":
+            ship_row, ship_column = randint(0, 5), randint(0, 5)
+        board[ship_row][ship_column] = "X"
+
+
+def print_board(board):
+    """
+    Creates the battleship board and converts the
+    letters into numbers and prints on the board
+    """
+    print("  A B C D E F")
+    print(" +-+-+-+-+-+-+")
+    row_numb = 1
+    for row in board:
+        print("%d|%s|" % (row_numb, "|".join(row)))
+        row_numb += 1
+
+
+def get_ship_location():
+    """
+    Input information for the user to guess a ship's location.
+    If the user enters an invalid row number or column letter,
+    will provide an error and prompt the user to enter the
+    parameters.
+    """
+    valid_row = None  # Assign valid_row value of None for while loop to await valid input from users
+
+    while valid_row is None:
+        row = input("Please enter a ship row 1-6: \n")
+        if row == "":
+            print("Invalid Input: Please enter a valid row between 1-6 \n")
+            continue
+
+        if row not in "123456":
+            print("Invalid Input: Please enter a valid row between 1-6 \n")
+            continue
+
+        valid_row = int(row) - 1  # Convert to int once a valid row is obtained
+
+    while True:
+        column = input("Please enter a ship column A-F: \n")
+        if not column:
+            print("Invalid Input: Please enter a valid column between letters A-F \n")
+            continue
+
+        column = column.upper()
+
+        if column not in "ABCDEF":
+            print("Invalid Input: Please enter a valid column between letters A-F \n")
+            continue
+
+        return valid_row, letters_to_numbers[column]
+
+
+def count_ships_hit(board):
+    """
+    Function to check the row to see if a ship has been hit.
+    If a ship has hit the mark with a hit "X"
+    """
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
 
 
 def run_game():
@@ -207,6 +207,5 @@ def play_game():
     start_input()
     run_game()
     replay_game()
-
 
 play_game()

@@ -201,7 +201,7 @@ def run_game():
     GUESS_BOARD = [[" "] * 6 for _ in range(6)]
     create_ships(HIDDEN_BOARD)
     # Player has 15 turns to guess all 10 ship locations.
-    turns = 15
+    turns = 25
     previous_guesses = set()
     while turns > 0:
         print_board(GUESS_BOARD, turns)  # Pass 'turns' as the second argument
@@ -218,11 +218,17 @@ def run_game():
             turns -= 1
         time.sleep(2)  # Add a short delay after hit/miss message
         if count_ships_hit(GUESS_BOARD) == 13:
+            clear_screen()
+            print_ascii()
             print("\nCongratulations, You have sunk all of "
                   "the battleships, Good Job!\n")
+            replay_game()
             break
         if turns == 0:
+            clear_screen()
+            print_ascii()
             print("You have run out of guesses. GAME OVER!\n")
+            replay_game()
             break
 
 
@@ -253,7 +259,6 @@ def play_game():
     intro()
     start_input()
     run_game()
-    replay_game()
 
 
 play_game()

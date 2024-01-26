@@ -107,32 +107,73 @@ def place_ship(board, ship_row, ship_column, ship_size, orientation):
             board[ship_row + i][ship_column] = "X"
 
 
-def create_ships(board):
+def create_ships(board, ships):
     """
     Create ships of different sizes on the board.
     """
-    ship_sizes = [4, 3, 3, 2, 1]  # Ship sizes for 5 ships
     orientations = ["horizontal", "vertical"]
 
-    for ship_size in ship_sizes:
+    for i, ship in enumerate(ships):
+        ship_size = ship["size"]
         while True:
             ship_row = randint(0, len(board) - 1)
             ship_column = randint(0, len(board[0]) - 1)
             orientation = choice(orientations)
 
-            if can_place_ship(board, ship_row, ship_column, ship_size, orientation):
-                place_ship(board, ship_row, ship_column, ship_size, orientation)
+            # Generate ship coordinates
+            ship_coordinates = []
+            if orientation == "horizontal":
+                if ship_column + ship_size > len(board[0]):
+                    continue  # Try again if ship extends beyond right edge of the board
+
+                for j in range(ship_size):
+                    ship_coordinates.append((ship_row, ship_column + j))
+            elif orientation == "vertical":
+                if ship_row + ship_size > len(board):
+                    continue  # Try again if ship extends beyond bottom edge of the board
+
+                for j in range(ship_size):
+                    ship_coordinates.append((ship_row + j, ship_column))
+
+            # Check if the ship can be placed without overlapping with existing ships
+            if all(board[row][column] != "X" for row, column in ship_coordinates):
+                # Place the ship on the board
+                for row, column in ship_coordinates:
+                    board[row][column] = "X"
+
+                # Update ship coordinates
+                ship["coordinates"] = ship_coordinates
                 break
 
 
-def print_board(board, turns_remaining):
+def update_ships_status(ships, GUESS_BOARD):
+    """
+    Update the status of ships based on the user's guesses.
+    """
+    for ship in ships:
+        if not ship["sunk"]:
+            ship["sunk"] = all(GUESS_BOARD[row][column] == "X" for row, column in ship["coordinates"])
+
+
+def print_remaining_ships(ships):
+    """
+    Print the status of remaining ships.
+    """
+    print("Remaining ships:")
+    for i, ship in enumerate(ships):
+        status = "Sunk" if ship["sunk"] else "Not Sunk"
+        print(f"Ship {i + 1} (Size {ship['size']}): {status}")
+
+
+def print_board(board, turns_remaining, total_ships, hits_remaining, ships):
     """
     Creates the battleship board and converts the
     letters into numbers and prints on the board
     """
     clear_screen() # Clear the console screen
     print(f"\nYou have {turns_remaining} turns remaining\n")
-    print("  A B C D E F")
+    print_remaining_ships(ships)
+    print("\n  A B C D E F")
     print(" +-+-+-+-+-+-+")
     row_numb = 1
     for row in board:
@@ -198,12 +239,20 @@ def run_game():
     # Guess Board that the user will see and use to guess the location of the
     # battle ships.
     GUESS_BOARD = [[" "] * 6 for _ in range(6)]
-    create_ships(HIDDEN_BOARD)
-    # Player has 15 turns to guess all 5 ship locations.
-    turns = 15
+    # List to store information about each ship
+    ships = [{"size": 4, "sunk": False, "coordinates": []},
+             {"size": 3, "sunk": False, "coordinates": []},
+             {"size": 3, "sunk": False, "coordinates": []},
+             {"size": 2, "sunk": False, "coordinates": []},
+             {"size": 1, "sunk": False, "coordinates": []}]
+
+    total_ships = len(ships)  # Total number of ships
+    turns = 30
     previous_guesses = set()
+    create_ships(HIDDEN_BOARD, ships)  # Updated function call
     while turns > 0:
-        print_board(GUESS_BOARD, turns)  # Pass 'turns' as the second argument
+        hits_remaining = total_ships - sum(ship["sunk"] for ship in ships)
+        print_board(GUESS_BOARD, turns, total_ships, hits_remaining, ships)
         row, column = get_ship_location(previous_guesses)
         if GUESS_BOARD[row][column] == "O":
             print("\nYou have already guessed that location, "
@@ -211,12 +260,13 @@ def run_game():
         elif HIDDEN_BOARD[row][column] == "X":
             print("\nNice Shot, you hit a battleship")
             GUESS_BOARD[row][column] = "X"
+            update_ships_status(ships, GUESS_BOARD)
         else:
             print("\nSorry, You missed a ship")
             GUESS_BOARD[row][column] = "O"
             turns -= 1
         time.sleep(2)  # Add a short delay after hit/miss message
-        if count_ships_hit(GUESS_BOARD) == 13:
+        if all(ship["sunk"] for ship in ships):
             clear_screen()
             print_ascii()
             print("\nCongratulations, You have sunk all of "
@@ -229,6 +279,7 @@ def run_game():
             print("You have run out of guesses. GAME OVER!\n")
             replay_game()
             break
+
 
 
 def replay_game():

@@ -171,7 +171,7 @@ def print_board(board, turns_remaining, total_ships, hits_remaining, ships):
     letters into numbers and prints on the board
     """
     clear_screen() # Clear the console screen
-    print(f"\nYou have {turns_remaining} turns remaining\n")
+    print(f"You have {turns_remaining} turns remaining\n")
     print_remaining_ships(ships)
     print("\n  A B C D E F")
     print(" +-+-+-+-+-+-+")

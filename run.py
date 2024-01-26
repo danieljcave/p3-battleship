@@ -247,7 +247,7 @@ def run_game():
              {"size": 1, "sunk": False, "coordinates": []}]
 
     total_ships = len(ships)  # Total number of ships
-    turns = 30
+    turns = 15
     previous_guesses = set()
     create_ships(HIDDEN_BOARD, ships)  # Updated function call
     while turns > 0:

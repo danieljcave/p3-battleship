@@ -18,6 +18,7 @@ letters_to_numbers = {
     "F": 5,
 }
 
+
 def print_ascii():
     print("    ____        __  __  __          __    _")
     print("   / __ )____ _/ /_/ /_/ /__  _____/ /_  (_)___")
@@ -52,7 +53,7 @@ def clear_screen():
     """
     Clears the console screen.
     """
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 def start_input():
@@ -75,8 +76,9 @@ def start_input():
 
 def can_place_ship(board, ship_row, ship_column, ship_size, orientation):
     """
-    Checks if a ship of the given size can be placed at the specified location
-    without overlapping with existing ships and fits within the board boundaries.
+    Checks if a ship of the given size can be placed at
+    the specified location without overlapping with existing
+    ships and fits within the board boundaries.
     """
     if orientation == "horizontal":
         if ship_column + ship_size > len(board[0]):
@@ -124,19 +126,21 @@ def create_ships(board, ships):
             ship_coordinates = []
             if orientation == "horizontal":
                 if ship_column + ship_size > len(board[0]):
-                    continue  # Try again if ship extends beyond right edge of the board
+                    continue  # Try again if ship extends beyond right
+                # edge of the board
 
                 for j in range(ship_size):
                     ship_coordinates.append((ship_row, ship_column + j))
             elif orientation == "vertical":
                 if ship_row + ship_size > len(board):
-                    continue  # Try again if ship extends beyond bottom edge of the board
+                    continue  # Try again if ship extends beyond bottom
+                # edge of the board
 
                 for j in range(ship_size):
                     ship_coordinates.append((ship_row + j, ship_column))
 
-            # Check if the ship can be placed without overlapping with existing ships
-            if all(board[row][column] != "X" for row, column in ship_coordinates):
+            # Checks the ship can be placed without overlapping existing ships
+            if all(board[row][column] != "X" for row, column in ship_coordinates):  # noqa
                 # Place the ship on the board
                 for row, column in ship_coordinates:
                     board[row][column] = "X"
@@ -152,12 +156,16 @@ def update_ships_status(ships, GUESS_BOARD):
     """
     for ship in ships:
         if not ship["sunk"]:
-            ship["sunk"] = all(GUESS_BOARD[row][column] == "X" for row, column in ship["coordinates"])
+            ship["sunk"] = all(
+                GUESS_BOARD[row][column] == "X" for row, column in ship["coordinates"]  # noqa
+            )
 
 
 def print_remaining_ships(ships):
     """
-    Print the status of remaining ships.
+    Print the status of remaining ships. if they
+    are sunk or not sunk, along with the ship sizes
+    and numbered ships
     """
     print("Remaining ships:")
     for i, ship in enumerate(ships):
@@ -170,7 +178,7 @@ def print_board(board, turns_remaining, total_ships, hits_remaining, ships):
     Creates the battleship board and converts the
     letters into numbers and prints on the board
     """
-    clear_screen() # Clear the console screen
+    clear_screen()  # Clear the console screen
     print(f"You have {turns_remaining} turns remaining\n")
     print_remaining_ships(ships)
     print("\n  A B C D E F")
@@ -185,7 +193,7 @@ def get_ship_location(previous_guesses):
     """
     Input information for the user to guess a ship's location.
     If the user enters an invalid row number or column letter,
-    will provide an error and prompt the user to enter correct 
+    will provide an error and prompt the user to enter correct
     value within the parameters.
     """
     while True:
@@ -208,7 +216,10 @@ def get_ship_location(previous_guesses):
                 previous_guesses.add(location)
                 break
             else:
-                print("You have already guessed that location, try guessing another location.")
+                print(
+                    "You have already guessed that location,"
+                    " try guessing another location."
+                )
         except ValueError:
             print("Invalid Input. Please enter a valid row and column.\n")
 
@@ -240,11 +251,13 @@ def run_game():
     # battle ships.
     GUESS_BOARD = [[" "] * 6 for _ in range(6)]
     # List to store information about each ship
-    ships = [{"size": 4, "sunk": False, "coordinates": []},
-             {"size": 3, "sunk": False, "coordinates": []},
-             {"size": 3, "sunk": False, "coordinates": []},
-             {"size": 2, "sunk": False, "coordinates": []},
-             {"size": 1, "sunk": False, "coordinates": []}]
+    ships = [
+        {"size": 4, "sunk": False, "coordinates": []},
+        {"size": 3, "sunk": False, "coordinates": []},
+        {"size": 3, "sunk": False, "coordinates": []},
+        {"size": 2, "sunk": False, "coordinates": []},
+        {"size": 2, "sunk": False, "coordinates": []},
+    ]
 
     total_ships = len(ships)  # Total number of ships
     turns = 15
@@ -255,8 +268,10 @@ def run_game():
         print_board(GUESS_BOARD, turns, total_ships, hits_remaining, ships)
         row, column = get_ship_location(previous_guesses)
         if GUESS_BOARD[row][column] == "O":
-            print("\nYou have already guessed that location, "
-                  "try guessing another location.")
+            print(
+                "\nYou have already guessed that location, "
+                "try guessing another location."
+            )
         elif HIDDEN_BOARD[row][column] == "X":
             print("\nNice Shot, you hit a battleship")
             GUESS_BOARD[row][column] = "X"
@@ -269,8 +284,10 @@ def run_game():
         if all(ship["sunk"] for ship in ships):
             clear_screen()
             print_ascii()
-            print("\nCongratulations, You have sunk all of "
-                  "the battleships, Good Job!\n")
+            print(
+                "\nCongratulations, You have sunk all of "
+                "the battleships, Good Job!\n"
+            )
             replay_game()
             break
         if turns == 0:
@@ -279,7 +296,6 @@ def run_game():
             print("You have run out of guesses. GAME OVER!\n")
             replay_game()
             break
-
 
 
 def replay_game():

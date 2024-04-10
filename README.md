@@ -64,48 +64,60 @@ The player has 15 guesses to locate the 5 ships that are located at random on th
 ## Features
 ### Welcome Message
 The first feature of the battleship program is the Welcome message that displays on the screen when the user first enters the game. The user is first greeted with the word, Battleship in the terminal that uses ASCII text to create the word out of keyboard characters. The aim of this is to intrigue the user into the game, to not only get them engaged but to make them want to play the game. Rather than just Reading the words Battleship.
+
 ![Battleship Ascii image](/assets/readme/battleship-ascii.png)
 
 On the welcome message, the user is welcomed to the game and shown the message 'How To Play:', this is a list of instructions on how the game will be played and what information the user will need beforehand to play the game. such as the game mechanics, which explain when a user guesses a spot they will either show a miss 'O' or a hit 'X' and all empty space is for the user to guess. It informs them of the number of turns they have and if they miss they will lose a turn and if they hit they will not lose and turn. Finally the aim of the game and what happens if they do not win.
+
 ![Image of battleship welcome message](/assets/readme/welcome-message.png)
 
 The last feature on the welcome screen is asking the user if they are ready to play the game. This I believe is crucial to the user experience, by allowing the user to read through the information and be able to decide when they are ready to play. To not be able to see the playing game without the correct instructions or knowledge. This is to not overwhelm the player or allow them to start and just guess what they are doing or waste turns, to give them the best chance of winning and enjoying the time in the game.
+
 ![Player ready questions](/assets/readme/are-you-ready.png)
 
 ### Game Board
 The game boards are made up of two boards. The game is a single-player game that is against a computer. The computer generates 5 random locations across the 6x6 board that the user has to guess. The program generates 5 ships with different length value and places them. This also checks to make sure ships do not overlap and that they dont go of the board. The value of the battleship locations is listed on the 'HIDDEN_BOARD'. This board is not shown to players as it has all the locations of the battleships for the player to guess. The 'GUESS_BOARD' is what the player sees. This is the board that they use to guess the locations of the battleships.
+
 ![GUESS_BOARD](/assets/readme/battleship-board.png)
 
 **Player Guess Choice**
 The player can choose how the game events happen. The player can guess any row or column that they would like. The player can make decisions and choices on their own to play their own game of battleship. They must choose a row between 1-6 and a column between A-F.
+
 ![player choice on the board](/assets/readme/battleship-board.png)
 
 **Player Miss**
 When the user is playing the game there is either a hit or a miss. If the player, unfortunately, misses the battleship, they are prompted with a message to let them know they missed and lose a turn.
+
 ![player miss](/assets/readme/player-miss.png)
 
 **Player Hit**
 When the user is playing the game there is either a hit or a miss. If the player scores a hit on the board. they are shown a message to let them know that they have hit a battleship. 
+
 ![player hit](/assets/readme/player-hit.png)
 
 **Player Input & Validation**
 There are different options when the player's input is required. At the start of the game when they are asked if they are ready to play. Then the most common is when asked to input which row and which column. To protect the game, the user must input a row and column within the board. The game checks that the user has entered a number in the range of 1-6 and a column of A-F. If the user tries to input anything out of the range, the game replies to the user and prompts a message that they are not in the range and reminds them. They are then instructed to input the row or column again.
+
 ![Player input value](/assets/readme/incorrect-value.png)
 
 **Multiple Guesses**
 If the player guesses a location that they have already guessed. The game will inform them that they have already guessed that location with a prompt. They will not lose a guess and game will ask them to re-input the row or column.
+
 ![player guesses multiple times](/assets/readme/multiple-guess.png)
 
 **Player Loss**
 If the player is unfortunately unable to guess all the locations of the battleship the player loses the game. If the player loses the game they will be prompted with a message to inform them of the loss. Following the loss the player will be asked if they would like to restart the game to try again or not.
+
 ![player loss](/assets/readme/player-lose.png)
 
 **Player Win**
 If the player guesses the correct location of the battleships and can get all 10 ships then the player wins. If that is the case the player will be shown and congratulatory message. They will then be asked if they would like to play the game again or would like not to.
+
 ![player win](/assets/readme/player-win.png)
 
 **Replay Game**
 The last feature of the game is the ability to replay the game. Rather than completing the game and having to refresh the page to run the program again. The player is asked at the end of their game if they win or lose. Whether they would like to play the game again or if they don't.
+
 ![replay game](/assets/readme/player-win.png)
 
 ### Future Features
@@ -137,9 +149,10 @@ The model follows a data function to display the information needed at specific 
 
 ## Testing
 ### Game Testing
-In creating the game, I started with an 8x8 grid. After testing and all working there were no issues and the game was working as described. The issue came in user testing. It was found that the issue was too large a grid for the user to be able to have a chance at winning the game. The 8x8 grid needed to be reduced. After testing it was found that the ideal game conditions were 15 guesses with 10 ships on a 6x6 grid.
+In creating the game, I started with an 8x8 grid. After testing and all working there were no issues and the game was working as described. The issue came in user testing. It was found that the issue was too large a grid for the user to be able to have a chance at winning the game. The 8x8 grid needed to be reduced. After testing it was found that the ideal game conditions were 15 guesses with 5 ships on a 6x6 grid.
 
 Each input was tested for the correct number and letter for the rows and the columns. Here can see that the game provides the user with an error message that informs them they have not entered a correct value and must enter a value in the range.
+
 ![testing image](/assets/readme/incorrect-value.png)
 
 Each line of the code has been checked and tested throughout the Python Linter test and all have passed. Within the testing phase, all print functions have been tested to make sure the user is displayed with all the correct information. Through the testing using visual studio code, I was able to see any problems within the code and be able to correct them before deploying it to Heroku.
@@ -148,18 +161,20 @@ The overall game works as intended and all functions of the game are working cor
 
 ### CI Python Linter
 This was the list of issues shown in the CI Linter.
+
 ![Python first linter test](/assets/readme/python-validator-test.png)
 
 After looking at the errors, most were due to extra whitespace after text, or code lines being too long. To fix the white space I checked the lines listed and remove the extra white space. To fix the issue of too long characters, I moved some lines below to their line so were still connecting and made sense.
+
 ![Python Test Complete](/assets/readme/python-validator-complete.png)
 
 The main issue I found was due to the ASCII graphic of a battleship. The issue was due to the character sequence with the characters being used. After some research, I found a fix to the code was to enter each row into a print() function. Then with the character sequence, I added either a / or \ to the code to remove the sequence issue. With def print_ascii(), I then added the code to the intro(). This solved all the issues and now the test is clear and has no errors.
+
 ![Python Test Pass](/assets/readme/python-validator-pass.png)
 ## Bugs
-There is a known bug in the game that I was unable to fix and after a lot of research and trying to input the correct code I was unable to provide a fix. The issue is when the user enters a blank character in the row and column it causes an issue within the game which causes the game to stop.
-![blank characters game](/assets/readme/enter-error.png)
-
-This is due to the int input. I had tried to use a while true statement to only allow the correct characters to be able to be input, this then caused an issue with the input of the game and was unable to solve.
+~~There is a known bug in the game that I was unable to fix and after a lot of research and trying to input the correct code I was unable to provide a fix. The issue is when the user enters a blank character in the row and column it causes an issue within the game which causes the game to stop.~~
+~~This is due to the int input. I had tried to use a while true statement to only allow the correct characters to be able to be input, this then caused an issue with the input of the game and was unable to solve.~~
+- Known bug was fixed and game works as expected.
 
 ## Deployment
 The game was deployed to Heroku using Code Instutute's mock terminal. To deploy, the following steps were taken:
@@ -174,4 +189,4 @@ The game was deployed to Heroku using Code Instutute's mock terminal. To deploy,
 
 ## Credits
 - Code Institute for the deployment terminal
-- Garrett Broughton for Battleship inspiration and guidence<a href="https://github.com/gbrough/battleship/blob/main/single_player.py">Click Here</a>
+- Garrett Broughton for Battleship inspiration and guidence <a href="https://github.com/gbrough/battleship/blob/main/single_player.py">Click Here</a>

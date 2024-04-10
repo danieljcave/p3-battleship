@@ -40,7 +40,7 @@ def intro():
         "How To Play: "
         "\n- You will have 15 guesses to locate the 5 enemy ships"
         "\n- There a 5 ships will different sizes to locate, and displayed"
-        " at the top of your screen"
+        " at the top of \nyour screen"
         "\n- A miss will show as an O and you will use a turn."
         "\n- A hit will show as an X and a turn will not be taken."
         "\n- The aim is to locate all ships and destroy them before "

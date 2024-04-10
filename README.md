@@ -24,6 +24,7 @@ Live version of the game avalible on Heroku - <a href="https://p3-battleship-dc-
     - [Welcome Message](#welcome-message)
     - [Game Board](#game-board)
     - [Future Features](#future-features)
+    - [Update Features](#update-features)
   - [Technologies Used](#technologies-used)
   - [Data Model](#data-model)
   - [Testing](#testing)
@@ -72,11 +73,11 @@ The last feature on the welcome screen is asking the user if they are ready to p
 ![Player ready questions](/assets/readme/are-you-ready.png)
 
 ### Game Board
-The game boards are made up of two boards. The game is a single-player game that is against a computer. The computer generates 10 random locations across the 6x6 board that the user has to guess. The value of the battleship locations is listed on the 'HIDDEN_BOARD'. This board is not shown to players as it has all the locations of the battleships for the player to guess. The 'GUESS_BOARD' is what the player sees. This is the board that they use to guess the locations of the battleships.
+The game boards are made up of two boards. The game is a single-player game that is against a computer. The computer generates 5 random locations across the 6x6 board that the user has to guess. The program generates 5 ships with different length value and places them. This also checks to make sure ships do not overlap and that they dont go of the board. The value of the battleship locations is listed on the 'HIDDEN_BOARD'. This board is not shown to players as it has all the locations of the battleships for the player to guess. The 'GUESS_BOARD' is what the player sees. This is the board that they use to guess the locations of the battleships.
 ![GUESS_BOARD](/assets/readme/battleship-board.png)
 
 **Player Guess Choice**
-The player can choose how the game events happen. The player can guess any row or column that they would like. The player can make decisions and choices on their own to play their own game of battleship. They must choose a row between 1-7 and a column between A-F.
+The player can choose how the game events happen. The player can guess any row or column that they would like. The player can make decisions and choices on their own to play their own game of battleship. They must choose a row between 1-6 and a column between A-F.
 ![player choice on the board](/assets/readme/battleship-board.png)
 
 **Player Miss**
@@ -88,11 +89,11 @@ When the user is playing the game there is either a hit or a miss. If the player
 ![player hit](/assets/readme/player-hit.png)
 
 **Player Input & Validation**
-There are different options when the player's input is required. At the start of the game when they are asked if they are ready to play. Then the most common is when asked to input which row and which column. To protect the game, the user must input a row and column within the board. The game checks that the user has entered a number in the range of 1-7 and a column of A-F. If the user tries to input anything out of the range, the game replies to the user and prompts a message that they are not in the range and reminds them. They are then instructed to input the row or column again.
+There are different options when the player's input is required. At the start of the game when they are asked if they are ready to play. Then the most common is when asked to input which row and which column. To protect the game, the user must input a row and column within the board. The game checks that the user has entered a number in the range of 1-6 and a column of A-F. If the user tries to input anything out of the range, the game replies to the user and prompts a message that they are not in the range and reminds them. They are then instructed to input the row or column again.
 ![Player input value](/assets/readme/incorrect-value.png)
 
 **Multiple Guesses**
-If the player guesses a location that they have already guessed. The game will inform them that they have already guessed that location with a prompt. They will not lose a guess and the board will be reshown to allow them to guess again.
+If the player guesses a location that they have already guessed. The game will inform them that they have already guessed that location with a prompt. They will not lose a guess and game will ask them to re-input the row or column.
 ![player guesses multiple times](/assets/readme/multiple-guess.png)
 
 **Player Loss**
@@ -105,12 +106,15 @@ If the player guesses the correct location of the battleships and can get all 10
 
 **Replay Game**
 The last feature of the game is the ability to replay the game. Rather than completing the game and having to refresh the page to run the program again. The player is asked at the end of their game if they win or lose. Whether they would like to play the game again or if they don't.
-![replay game](/assets/readme/play-again.png)
+![replay game](/assets/readme/player-win.png)
 
 ### Future Features
 - Users can choose difficulty or play on larger game boards with increased battleships.
 - Allow the user to have their board with the user selecting where to place their battleship and the computer guessing their location.
-- Have set-sized battleships rather than randomised locations.
+~~- Have set-sized battleships rather than randomised locations.~~
+
+### Update Features
+Project was update from future features. The Game now creates 5 ships in total. A 4 size ship, two 3 size ships and two 2 size ships. This allows the user to hit a shit and if they sink one of the ships, the game notifies them so they can search for the other ships.
 
 ## Technologies Used
 Programming Languages
